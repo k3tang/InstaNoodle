@@ -37,6 +37,7 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 gem "faker"
 gem "pry-rails"
+gem "railties"
 
 
 group :development, :test do
