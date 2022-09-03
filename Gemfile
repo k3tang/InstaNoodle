@@ -38,6 +38,8 @@ gem "bootsnap", require: false
 gem "faker"
 gem "pry-rails"
 gem "railties"
+gem "bcrypt"
+gem "jbuilder"
 
 
 group :development, :test do
@@ -48,5 +50,8 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "annotate"
+  gem "binding_of_caller"
+  gem "better_errors"
 end
 
