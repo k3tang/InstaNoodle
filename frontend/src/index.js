@@ -22,16 +22,16 @@ const store = configureStore();
       </Provider>
     )
   }
-const renderApplication = () => {
+
   ReactDOM.render(
     <React.StrictMode>
       <Root />
     </React.StrictMode>,
     document.getElementById('root')
   );
-}
 
-renderApplication();
+
+
 
 // if (sessionStorage.getItem('X-CSRF-Token') === null) {
 //   restoreCSRF().then(renderApplication);
