@@ -25,7 +25,7 @@ ApplicationRecord.transaction do
    # More users
   10.times do 
     User.create!({
-      name: Faker::Internet.name(specifier: 3),
+      name: Faker::Internet.domain_word,
       email: Faker::Internet.unique.email,
       password: 'password'
     }) 
