@@ -17,12 +17,12 @@ const removeCurrentUser = () => {
 };
 
 const storeCSRFToken = response => {
-    const csrfToken = response.headers.get("X-CSRF-Token")
-    if (csrfToken) sessionStorage.setItem('X-CERSF-Token', csrfToken);
+    const csrfToken = response.headers.get('X-CSRF-Token')
+    if (csrfToken) sessionStorage.setItem('X-CSRF-Token', csrfToken);
 }
 
 const storeCurrentUser = user => {
-    if (user) sessionStorage.getItem('currentUser', JSON.stringify(user));
+    if (user) sessionStorage.setItem('currentUser', JSON.stringify(user));
     else sessionStorage.removeItem('currentUser');
 }
 

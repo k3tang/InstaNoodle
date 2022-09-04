@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { restoreCSRF } from "../store/csrf";
+import React, { useState } from 'react';
+import * as sessionActions from '../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import './LoginForm.css';
 
 function LoginFormPage() {
     const dispatch = useDispatch();
-    const sessionUser = userSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
@@ -13,7 +15,7 @@ function LoginFormPage() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        setErrors([]),
+        setErrors([]);
         return dispatch(sessionActions.login({email, password}))
             .catch(async(res) => { 
                 let data;
@@ -27,4 +29,33 @@ function LoginFormPage() {
                 else setErrors([res.statusText]);
             });
     }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+            </ul>
+            <label>
+                Email
+                <input
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </label>
+            <label>
+                Password
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+            </label>
+            <button type="submit">Log In</button>
+        </form>
+    );
 }
+
+export default LoginFormPage;
