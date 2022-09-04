@@ -2,8 +2,7 @@ class Api::SessionsController < ApplicationController
   def show
     @user = current_user
     if @user 
-      render json: {user: current_user}
-      #'api/users/show'
+      render 'api/users/show'
     else 
       render json: {user: nil} #or login page
     end 
@@ -13,8 +12,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:email], params[:password])
     if @user 
         login!(@user)
-        render json: {user: current_user}
-        # 'api/users/show'
+        render 'api/users/show'
     else 
       render json: {errors: ['The provided credentials are invalid.']}, status: :unauthorized
     end 
