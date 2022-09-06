@@ -3,30 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Navigation.css';
 import UserProfile from '../UserProfilePage';
+import LoginFormPage from '../LoginFormPage';
 
 
 function Navigation() {
-   
-  const sessionUser = useSelector(state => state.session.user);
-    // const profileButton = 
-    // <button>
-    //     <i className="fa-solid fa-user" size="2x" ></i>
-    // </button>
+    const sessionUser = useSelector(state => state.session.user);
 
-   
+    
 
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-        <UserProfile user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
-      <>
-        <Link to="/login"></Link>
-      </>
-    );
-  }
 
   return (
     <>
@@ -36,7 +20,9 @@ function Navigation() {
                 <NavLink exact to="/products">Shop Now</NavLink>
             </li>
             <li>
-                  <NavLink exact to={sessionLinks} className="fa-solid fa-user"></NavLink>  
+                { sessionUser ? 
+                      <NavLink exact to="/account" className="fa-solid fa-user" user={sessionUser}></NavLink> : <NavLink exact to="/login" className="fa-solid fa-user"></NavLink> 
+                }
             </li>
         </ul>
     </>
