@@ -1,1 +1,16 @@
 /* TODO Add site wide styles */
+@import url(//db.onlinewebfonts.com/c/1fabbfc1ec2dd413f4c45c887d0e4137?family=T-Star);
+
+@font-face {
+    font-family: "T-Star Bold";
+    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot");
+    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.svg#T-Star") format("svg");
+}
+
+@import url(//db.onlinewebfonts.com/c/4d6aeef29c4c70c6227ad86b5371f8e9?family=T-Star);
+
+@font-face {
+    font-family: "T-Star Regular";
+    src: url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.eot");
+    src: url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.svg#T-Star") format("svg");
+}

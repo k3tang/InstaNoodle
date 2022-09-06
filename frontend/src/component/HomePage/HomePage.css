@@ -1,14 +1,60 @@
-@import url(//db.onlinewebfonts.com/c/1fabbfc1ec2dd413f4c45c887d0e4137?family=T-Star);
-
-@font-face {
-    font-family: "T-Star";
-    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot");
-    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.svg#T-Star") format("svg");
-}
-
 * {
-    background-color: #ffe394;
-    font-family: 'T-Star'
+    font-family: 'T-Star Bold';
 }
+
+#splash-page {
+    background-color: #ffe394;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 5vh;
+   
+}
+
+#splash-pic > img {
+    margin-left: 5vw;
+    max-width: 100%;
+    max-height: 80%;
+    border-radius: 3vw;
+}
+
+@media all and (min-width: 1024px) {
+    #splash-page {
+    height: 100vh;
+}}
+
+#splash-text {
+    max-width: 50%;
+
+}
+
+#splash-text h1 p {
+    font-weight: 700;
+    letter-spacing: .015em;
+    text-transform: uppercase;
+}
+
+#splash-text h1 {
+    font-size: 9vh;
+    overflow-wrap: normal;
+}
+
+#splash-text h2 {
+    font-family: 'T-Star Regular';
+    font-size: 2.5vh;
+    letter-spacing: .02em;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+}
+
+#splash-text p > a {
+    text-decoration: none;
+    text-decoration-color: black;
+
+
+}
+
 
 
