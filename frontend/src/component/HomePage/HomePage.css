@@ -1,0 +1,14 @@
+@import url(//db.onlinewebfonts.com/c/1fabbfc1ec2dd413f4c45c887d0e4137?family=T-Star);
+
+@font-face {
+    font-family: "T-Star";
+    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot");
+    src: url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fabbfc1ec2dd413f4c45c887d0e4137.svg#T-Star") format("svg");
+}
+
+* {
+    background-color: #ffe394;
+    font-family: 'T-Star'
+}
+
+
