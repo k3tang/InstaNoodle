@@ -10,12 +10,12 @@ const HomePage = () => {
         <div id="splash-page">
             <div id="splash-text">
                 <h1>
-                    NUTRITIONALLY COMPLETE INSTANT NOODLES
+                    Nutritionally Complete Instant Noodles
                 </h1>
                 <h2>
                     Plant-based instant noodles that are healthy for you and our planet.
                 </h2>
-                <p>
+                <p id="splash-button">
                     <a href="/products">Check it out</a>
                 </p>
                 

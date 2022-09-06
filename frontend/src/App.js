@@ -6,6 +6,8 @@ import Navigation from './component/Navigation';
 import HomePage from './component/HomePage';
 import UserProfile from './component/UserProfilePage';
 import ProductsIndex from './component/ProductsPage';
+import AboutPage from './component/AboutPage';
+import RecipesIndex from './component/RecipesIndex';
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
         </Route>
         <Route exact path="/products">
           <ProductsIndex />
+        </Route>
+        <Route exact path="/about">
+          <AboutPage />
+        </Route>
+        <Route exact path="/recipes">
+          <RecipesIndex/>
         </Route>
       </Switch>
     </>
