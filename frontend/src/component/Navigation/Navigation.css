@@ -6,7 +6,7 @@
     /* justify-content: space-between; */
     align-items: center;
     padding: 3vh;
-    background-color: #ffe394;
+    /* background-color: transparent; */
     border-bottom: 2px solid black;
     padding-left: 2vw;
     padding-right: 2vw;
@@ -51,3 +51,10 @@
     padding-left: 1vw;
 }
 
+.yellow{
+    background-color:#ffe394 ;
+}
+
+.pink {
+    background-color: #feb8af;
+}

@@ -1,20 +1,31 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Navigation.css';
-import UserProfile from '../UserProfilePage';
-import LoginFormPage from '../LoginFormPage';
+// import { useLocation } from 'react-router-dom';
 
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
+    const location = useLocation();
+
+
+    const color =() =>{
+        if (location.pathname === "/"){
+            return "yellow"
+        } else if (location.pathname === "/about") {
+            return "pink"
+        }
+    }
+
 
 
 
 
   return (
     <>
-          <div id="links-icons">
+    {console.log(location.pathname)}
+        <div id="links-icons" className={color()}>
         <div id="main-logo">
             <NavLink exact to="/">InstaNoodles</NavLink>
         </div>

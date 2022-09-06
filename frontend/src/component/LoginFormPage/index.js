@@ -33,32 +33,41 @@ function LoginFormPage() {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
-            <label>
-                Email
-                <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Password
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <button type="submit">Log In</button>
-        </form>
-
-         <NavLink to="/signup">Need to create an account?</NavLink>
+        <div id="login-component">
+                <form id="login-form" onSubmit={handleSubmit}>
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                    <h1 id="login-header">Login</h1>
+                    <div id="email-input">
+                        <input
+                            type="text"
+                            placeholder='Email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        </div>
+                    <div id="password-input">
+                        <input
+                            type="password"
+                            placeholder='Password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div id="login-button">
+                        <button type="submit">Log In</button>
+                    </div>
+                    <div id="login-demo-button">
+                        <button>Login as demo user</button>
+                    </div>
+                    <div id="signup-link">
+                        <NavLink to="/signup">Need to create an account?</NavLink>
+                    </div>
+                </form>
+        </div>
         </>
     );
 }
