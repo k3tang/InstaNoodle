@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import cartoon from "../../assets/login-image.jpg"
 
 function SignupFormPage() {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function SignupFormPage() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Redirect to="/account" />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,10 +37,11 @@ function SignupFormPage() {
     };
 
     return (
-
+        <>
+        <div id="signup-component">
         <form id="signup-form" onSubmit={handleSubmit}>
             <h1 id="signup-header">Create Account</h1>
-            <ul>
+            <ul id="signup-errors">
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
             <div class="signup-input">
@@ -79,7 +81,13 @@ function SignupFormPage() {
                 />
             </div>
             <button type="submit">Sign Up</button>
+            <div id="login-link">
+                <NavLink to="/login">Already have an account?</NavLink>
+            </div>
         </form>
+        </div>
+        <img id="signup-cartoon" src={cartoon} alt="cartoon-noodle-person"/>
+        </>
     );
 }
 

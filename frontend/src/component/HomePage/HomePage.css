@@ -9,12 +9,9 @@
     align-items: center;
     padding-left: 2vw;
     padding-right: 2vw;
-    padding-top: 3vh;
     padding-bottom: 3vh;
     height: 90vh;
 
-
-    
 }
 
 #splash-pic > img {
@@ -23,12 +20,6 @@
     border-radius: 5%;
 }
 
-
-/* @media all and (min-width: 1024px) {
-    #splash-page {
-    height: 100vh;
-
-}} */
 
 #splash-text {
     margin-top: 3vh;
@@ -84,8 +75,9 @@ a:visited {
 @media all and (max-width: 800px) {
     #splash-page {
         flex-wrap: wrap-reverse;
-        padding-top: 1vh;
         max-height: fit-content;
+        padding-top: 3vh;
+        height: 100%;
     }
 
     #splash-pic {
@@ -119,5 +111,6 @@ a:visited {
     #splash-text p > a{
         font-size: 4vw;
     }
+
 }
 

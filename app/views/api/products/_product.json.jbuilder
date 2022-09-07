@@ -2,10 +2,9 @@ json.extract! product,
     :id,
     :name,
     :desc,
-    :price,
-    :average_rating
+    :price
     
-    json.photo_url url_for(bench.photo)
+    json.photo_url url_for(product.photo)
 
 
 

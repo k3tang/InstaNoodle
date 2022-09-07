@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductsPage.css";
-import ProductListing from "../ProductListingPage";
+import ProductListing from "../ProductListingPage/index";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts,getProducts } from "../../store/products";
 
-const ProductsIndex = ({products}) => {
+const ProductsIndex = () => {
+    const products = useSelector(getProducts);
+
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        dispatch(fetchProducts())
+    },[])
+
+    const mapProducts = () => {
+        return products.map(product => (
+            <ProductListing key={product.id} product={product}/>
+        ))
+    }
+    
     return (
         <div id="product-listings">
             <h1>All Products</h1>
-            {products.map((product) => (
-                <ProductListing
-                    key={product.id}
-                    product={product}
-                />
-            ))}
+            {/* {products.map(product => (
+                <ProductListing product={product}/>
+            ))} */}
+            {mapProducts()}
         </div>
        
     )

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 import {NavLink} from 'react-router-dom';
+import cartoon from "../../assets/login-image.jpg"
 
 function LoginFormPage() {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function LoginFormPage() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to='/'/>;
+    if (sessionUser) return <Redirect to='/account'/>;
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -31,14 +32,20 @@ function LoginFormPage() {
             });
     }
 
+    const handleDemoSubmit = e => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({email: "demo@user.io", password: "password"}))
+    }
+
     return (
         <>
         <div id="login-component">
                 <form id="login-form" onSubmit={handleSubmit}>
-                    <ul>
+    
+                    <h1 id="login-header">Login</h1>
+                    <ul id="login-errors">
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
-                    <h1 id="login-header">Login</h1>
                     <div id="email-input">
                         <input
                             type="text"
@@ -60,7 +67,7 @@ function LoginFormPage() {
                     <div id="login-button">
                         <button type="submit">Log In</button>
                     </div>
-                    <div id="login-demo-button">
+                    <div id="login-demo-button" onClick={handleDemoSubmit}>
                         <button>Login as demo user</button>
                     </div>
                     <div id="signup-link">
@@ -68,6 +75,7 @@ function LoginFormPage() {
                     </div>
                 </form>
         </div>
+            <img id="login-cartoon" src={cartoon} alt="cartoon-noodle-person" />
         </>
     );
 }

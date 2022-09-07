@@ -22,10 +22,14 @@ function UserProfile() {
     return !user ? (
         <Redirect to="/" /> ) : (
             <>
-                <h1>My Account</h1>
-                <p>Hello, {user.name}</p>
-                <button onClick={logout}>Logout</button>
+            <div id="profile-component">
+                <h1>Hello, {user.name}</h1>
+                <div id="profile-buttons">
+                    <button>Cart</button>
+                    <button onClick={logout}>Logout</button>
+                </div>
                 <h2>Order History</h2>
+            </div>
             </>
         )
 }

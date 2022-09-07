@@ -14,3 +14,11 @@
     src: url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.eot");
     src: url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4d6aeef29c4c70c6227ad86b5371f8e9.svg#T-Star") format("svg");
 }
+
+@import url(//db.onlinewebfonts.com/c/65923d225f2e78842d14d51023161b8e?family=HWT+Artz);
+
+@font-face {
+    font-family: "HWT Artz";
+    src: url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.eot");
+    src: url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.woff") format("woff"), url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/65923d225f2e78842d14d51023161b8e.svg#HWT Artz") format("svg");
+}

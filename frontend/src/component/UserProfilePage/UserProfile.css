@@ -1,0 +1,40 @@
+#profile-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    margin-top: 8vh;
+}
+
+#profile-buttons {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile-buttons button {
+    font-size: 1.5vw;
+    border-bottom: 1px solid black;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+#profile-buttons button:hover {
+    background-color: black;
+    color: white;
+    padding: 0.75vw;
+}
+
+#profile-component h2 {
+    margin-top: 3.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 3vw;
+    letter-spacing: 0.02em;
+}

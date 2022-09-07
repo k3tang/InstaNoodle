@@ -1,9 +1,9 @@
 import React from "react";
 import "./ProductListingPage.css"
 
-const ProductListing = () => {
+const ProductListing = ({product}) => {
     return (
-        <h1>Product</h1>
+        <li>{product.name}</li>
     )
 }
 
