@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 import splashPic from '../../assets/splash-pic.png';
+import ScrollTwo from "./Scroll2";
 
 const HomePage = () => {
   
@@ -22,6 +23,9 @@ const HomePage = () => {
             <div id="splash-pic">
                 <img src={splashPic} alt= "noodles in bowl" />
             </div>
+        </div>
+        <div id="second-scroll">
+            <ScrollTwo />
         </div>
         </>
        

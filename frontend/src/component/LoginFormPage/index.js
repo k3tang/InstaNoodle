@@ -41,10 +41,11 @@ function LoginFormPage() {
         <>
         <div id="login-component">
                 <form id="login-form" onSubmit={handleSubmit}>
-                    <ul>
+    
+                    <h1 id="login-header">Login</h1>
+                    <ul id="login-errors">
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
-                    <h1 id="login-header">Login</h1>
                     <div id="email-input">
                         <input
                             type="text"

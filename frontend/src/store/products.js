@@ -3,14 +3,14 @@ import csrfFetch from "./csrf";
 const SET_PRODUCTS = 'products/SET_PRODUCTS';
 const SET_PRODUCT = 'products/SET_PRODUCT'
 
-export const setProducts = products => ({
+export const setProducts = payload => ({
     type: SET_PRODUCTS,
-    payload: products
+    payload
 })
 
 export const setProduct = product => ({
     type: SET_PRODUCT,
-    payload: product
+    product
 })
 
 export const getProduct = productId => state => {
@@ -34,13 +34,13 @@ export const getProducts = state => {
 export const fetchProducts = () => async dispatch => {
     const res = await csrfFetch('api/products')
     const products = await res.json();
-    dispatch({type: SET_PRODUCTS, products})
+    dispatch(setProducts(products))
 }
 
 export const fetchProduct = (productId) => async dispatch => {
     const res = await csrfFetch(`api/products/${productId}`)
     const product = await res.json();
-    dispatch({type: SET_PRODUCT, product})
+    dispatch(setProduct(product))
 }
 
 function productsReducer(state = {}, action) {
@@ -49,7 +49,7 @@ function productsReducer(state = {}, action) {
 
     switch(action.type){
         case SET_PRODUCTS:
-            return {...nextState, ...action.products};
+            return action.payload.products;
         case SET_PRODUCT:
             return nextState[action.product.id] = action.product;
         default:

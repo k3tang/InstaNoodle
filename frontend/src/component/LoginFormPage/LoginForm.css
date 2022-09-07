@@ -24,7 +24,14 @@
     width: 32vw;
 }
 
+#login-errors {
+    font-size: 1.5vw;
+    background-color: #feb8af;
+    margin-bottom: 3vh;
+    text-align: center;
+    text-transform: uppercase;
 
+}
 
 #login-form input, #login-form button {
     text-transform: uppercase;

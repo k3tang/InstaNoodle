@@ -41,7 +41,7 @@ function SignupFormPage() {
         <div id="signup-component">
         <form id="signup-form" onSubmit={handleSubmit}>
             <h1 id="signup-header">Create Account</h1>
-            <ul>
+            <ul id="signup-errors">
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
             <div class="signup-input">

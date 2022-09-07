@@ -73,6 +73,15 @@
     width: 9vw;
 }
 
+#signup-errors {
+    font-size: 1.5vw;
+    background-color: #feb8af;
+    margin-bottom: 2vh;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
 @media all and (max-width: 1024px) {
     #signup-component {
         padding-top: 5vh;
