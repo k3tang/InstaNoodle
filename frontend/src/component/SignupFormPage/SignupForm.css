@@ -1,0 +1,97 @@
+#signup-component {
+    margin-top: 6%;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-header {
+    font-size: 4vw;
+    text-transform: uppercase;
+    padding-bottom: 6vh;
+    text-align: center;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 32vw;
+}
+
+#signup-form input,
+button {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.02em;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 0.75vw;
+    padding-bottom: 0.75vw;
+    border-radius: 2vw;
+    margin-bottom: 1.5vh;
+    font-size: 1.25vw;
+    width: stretch;
+
+}
+
+#signup-form input {
+    border: 0;
+    outline: 0;
+    background-color: #ececec;
+    text-transform: none;
+}
+
+#signup-form ::placeholder {
+    text-transform: uppercase;
+}
+
+#signup-form button {
+    border: 1px solid black;
+}
+
+#signup-form button:hover {
+    background-color: black;
+    color: white;
+}
+
+#login-link {
+    font-size: 1.5vw;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+#signup-cartoon {
+    display: block;
+    position: absolute;
+    right: 10vw;
+    bottom: 7vh;
+    width: 9vw;
+}
+
+@media all and (max-width: 1024px) {
+    #signup-component {
+        padding-top: 5vh;
+    }
+    #signup-header {
+        font-size: 8vw;
+    }
+
+    #signup-form {
+        width: 75vw;
+    }
+
+    #signup-form input, #signup-form button, #login-link {
+        font-size: 3.5vw;
+        margin-bottom: 2vh;
+        border-radius: 12vw;
+    }
+
+    #signup-cartoon {
+        width: 20vw;
+    }
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Navigation.css';
-// import { useLocation } from 'react-router-dom';
+import noodleIcon from "../../assets/ramen.png";
 
 
 function Navigation() {
@@ -20,14 +20,14 @@ function Navigation() {
 
 
 
-
-
   return (
     <>
     {console.log(location.pathname)}
         <div id="links-icons" className={color()}>
         <div id="main-logo">
-            <NavLink exact to="/">InstaNoodles</NavLink>
+                  <div><NavLink exact to="/">InstaNoodles</NavLink></div>
+                  <img src={noodleIcon} alt="noodle-icon" />
+
         </div>
             <div id="nav-list">
                 <div id="products-link">

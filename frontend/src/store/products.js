@@ -1,14 +1,16 @@
-import { useDispatch } from "react-redux";
 import csrfFetch from "./csrf";
-
-const dispatch = useDispatch();
 
 const SET_PRODUCTS = 'products/SET_PRODUCTS';
 const SET_PRODUCT = 'products/SET_PRODUCT'
 
-const setProducts = products => ({
+export const setProducts = products => ({
     type: SET_PRODUCTS,
     payload: products
+})
+
+export const setProduct = product => ({
+    type: SET_PRODUCT,
+    payload: product
 })
 
 export const getProduct = productId => state => {
@@ -46,8 +48,8 @@ function productsReducer(state = {}, action) {
     const nextState = {...state};
 
     switch(action.type){
-        case SET_BENCHES:
-            return nextState[action.product];
+        case SET_PRODUCTS:
+            return {...nextState, ...action.products};
         case SET_PRODUCT:
             return nextState[action.product.id] = action.product;
         default:

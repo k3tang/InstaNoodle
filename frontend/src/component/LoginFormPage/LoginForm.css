@@ -1,6 +1,7 @@
 
 #login-component {
     margin-top: 6%;
+    position: relative;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +10,7 @@
 }
 
 #login-header {
-    font-size: 6vw;
+    font-size: 4vw;
     text-transform: uppercase;
     padding-bottom: 6vh;
     text-align: center;
@@ -25,7 +26,7 @@
 
 
 
-#login-form input, button {
+#login-form input, #login-form button {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.02em;
@@ -44,14 +45,58 @@
     border: 0;
     outline: 0;
     background-color: #ececec;
-   
+    text-transform: none;
+}
+
+#login-form ::placeholder {
+    text-transform: uppercase;
 }
 
 #login-form button {
     border: 1px solid black;
 }
 
+#login-form button:hover {
+    background-color: black;
+    color: white;
+}
+
 #signup-link {
+    font-size: 1.5vw;
     margin-top: 1vh;
     text-align: center;
+}
+
+#login-cartoon {
+    display: block;
+    position: absolute;
+    right: 10vw;
+    bottom: 7vh;
+    width: 9vw;
+}
+
+@media all and (max-width: 1024px) {
+    #login-component {
+        padding-top: 5vh;
+    }
+
+    #login-header {
+        font-size: 8vw;
+    }
+
+    #login-form {
+        width: 75vw;
+    }
+
+    #login-form input,
+    #login-form button,
+    #signup-link {
+        font-size: 3.5vw;
+        margin-bottom: 2vh;
+        border-radius: 12vw;
+    }
+
+    #login-cartoon {
+        width: 20vw;
+    }
 }

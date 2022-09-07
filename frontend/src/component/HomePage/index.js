@@ -1,6 +1,5 @@
 import React from "react";
 import "./HomePage.css";
-import { Link } from "react-router-dom";
 import splashPic from '../../assets/splash-pic.png';
 
 const HomePage = () => {
