@@ -1,6 +1,11 @@
 * {
     text-decoration: none;
 }
+
+a:link {
+    color: black;
+}
+
 #links-icons {
     display: flex;
     justify-content: space-between;

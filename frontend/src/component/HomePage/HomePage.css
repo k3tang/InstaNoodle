@@ -48,11 +48,12 @@
 }
 
 #splash-text a:link {
-    color: red;
+    color: black;
 }
 
 #splash-text p > a {
     text-decoration: none;
+    text-decoration-color: black;
     font-size: 1.5vw;
     border: 2px solid black;
     padding-left: 2vh;
