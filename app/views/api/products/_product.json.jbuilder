@@ -4,7 +4,7 @@ json.extract! product,
     :desc,
     :price
     
-    json.photo_url url_for(product.photo)
+    json.photo_url product.photo.url
 
 
 

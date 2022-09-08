@@ -8,6 +8,7 @@ import UserProfile from './component/UserProfilePage';
 import ProductsIndex from './component/ProductsPage';
 import AboutPage from './component/AboutPage';
 import RecipesIndex from './component/RecipesIndex';
+import ProductShow from './component/ProductShow';
 
 
 function App() {
@@ -34,7 +35,10 @@ function App() {
           <AboutPage />
         </Route>
         <Route exact path="/recipes">
-          <RecipesIndex/>
+          <RecipesIndex />
+        </Route>
+        <Route exact path="/products/:productId">
+          <ProductShow />
         </Route>
       </Switch>
     </>

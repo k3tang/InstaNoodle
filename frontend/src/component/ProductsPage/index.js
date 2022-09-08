@@ -22,9 +22,6 @@ const ProductsIndex = () => {
     return (
         <div id="product-listings">
             <h1>All Products</h1>
-            {/* {products.map(product => (
-                <ProductListing product={product}/>
-            ))} */}
             {mapProducts()}
         </div>
        
