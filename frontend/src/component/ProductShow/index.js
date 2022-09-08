@@ -39,7 +39,7 @@ const ProductShow = () => {
                     <div id="show-description">{desc}</div>
                     <div id="show-price">${(Math.round(price * 100)/100).toFixed(2)}</div>
                     <div id="show-quantity-container">
-                        <label for="show-quantity-container" id="show-label">Select Quantity</label>
+                        <label htmlFor="show-quantity-container" id="show-label">Select Quantity</label>
                             <div className="show-quantity">
                                 <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
                                 <input type="text" id="show-input" value={count} onChange={handleInput}></input>
