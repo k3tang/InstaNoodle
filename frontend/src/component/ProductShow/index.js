@@ -9,7 +9,7 @@ const ProductShow = () => {
     const {productId} = useParams();
     const dispatch = useDispatch();
     const product = useSelector(getProduct(productId));
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -28,13 +28,16 @@ const ProductShow = () => {
             <div id="show-text-container">
                     <div id="show-name">{name}</div>
                     <div id="show-description">{desc}</div>
-                    <div id="show-price">${price}</div>
-                    <div id="show-quantity">
-                        <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
-                        <input type="text" value={count} onChange={(e) => setCount(e.target.value)}></input>
-                        <button onClick={() => setCount(parseInt(count) - 1)}>-</button>
+                    <div id="show-price">${(Math.round(price * 100)/100).toFixed(2)}</div>
+                    <div id="show-quantity-container">
+                        <label for="show-quantity-container" id="show-label">Select Quantity</label>
+                            <div className="show-quantity">
+                                <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
+                                <input type="text" value={count} onChange={(e) => (setCount(e.target.value) > 0 ? setCount(e.target.value) : setCount(1) )}></input>
+                                <button onClick={() => (setCount(parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
+                            </div>
                     </div>
-                    <button>Add to cart</button>
+                    <button id="show-add-button">Add to cart</button>
             </div>    
         </div>
         </>

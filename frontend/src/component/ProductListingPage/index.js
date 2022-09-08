@@ -7,12 +7,15 @@ const ProductListing = ({product}) => {
 
     return (
         <>
-            <div id="listing-component">
+            <div className="listing-component">
                 <Link to={`/products/${id}`} className="product-image">
                     <img src={photoUrl} alt="product" />
                 </Link>
-                <div className="product-item">{name}</div>
-                <div className="product-price">${price}</div>
+                <div className="product-text">
+                    <div className="product-item">{name}</div>
+                    <div className="product-price">${(Math.round(price * 100) / 100).toFixed(2)}</div>
+                </div>
+                
             </div>
         </>
     )

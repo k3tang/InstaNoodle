@@ -2,4 +2,152 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 4.5vh;
+    margin-bottom: 10vh;
+}
+
+#show-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5vw;
+}
+
+#show-text-container div {
+    margin-bottom: 3vh;
+}
+
+#show-picture img {
+    height: 80vh;
+    border-radius: 5vh;
+}
+
+#show-name {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+}
+
+#show-description {
+    font-family: 'T-Star Regular';
+    font-size: 1.25vw;
+    line-height: 3.5vh;
+}
+
+#show-price {
+    font-size: 2vw; 
+}
+
+.show-quantity {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    border: 1px solid black;
+    border-radius: 5vh;
+    margin-top: 0.5vh;
+    width: 10vw;
+    overflow: hidden;
+}
+
+.show-quantity > button {
+    /* background-color: aqua; */
+    text-align: center;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
+    padding-top: 0.75vh;
+    padding-bottom: 0.75vh;
+}
+
+.show-quantity input {
+    width: 3vw;
+    border: none;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.show-quantity input:focus {
+    outline: none;
+}
+
+#show-label {
+    font-family: 'T-Star Regular';
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    padding-left: 0.25vw;
+}
+
+#show-add-button {
+    border: 1px solid black;
+    border-radius: 5vh;
+    font-size: 1.0vw;
+    width: 13vw;
+    padding: 0.75vw;
+    text-transform: uppercase;
+}
+
+#show-add-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.show-quantity button:hover {
+    background-color: black;
+    color: white;
+    
+}
+
+@media all and (max-width: 800px) {
+    #show-component {
+        flex-wrap: wrap;
+        height: 100vh;
+        margin-top: 2vh;
+        padding-bottom: 10vh;
+    }
+
+    #show-picture img { 
+        width: 100%;
+        height: auto;
+    }
+
+    #show-name {
+        font-size: 9vw;
+        margin-top: 2vh
+    }
+
+    #show-description {
+        font-size: 3vw;
+    }
+
+    #show-price {
+        font-size: 8vw;
+    }
+
+    #show-label {
+        font-size: 2.5vw;
+        padding-left: 1vw;
+    }
+    
+    #show-add-button {
+        font-size: 4vw;
+        width: 35vw;
+        padding: 2vw;
+    }
+
+    .show-quantity {
+        width: 22vw;
+    }
+
+    .show-quantity button {
+        font-size: 4vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .show-quantity input {
+        font-size: 3.5vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
 }

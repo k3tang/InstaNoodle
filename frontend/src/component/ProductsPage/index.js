@@ -20,10 +20,13 @@ const ProductsIndex = () => {
     }
     
     return (
-        <div id="product-listings">
-            <h1>All Products</h1>
-            {mapProducts()}
-        </div>
+        <>
+            <h1 id="products-header">Instant Gratification</h1>
+            <div id="product-listings">
+                {mapProducts()}
+            </div>
+        </>
+        
        
     )
 }

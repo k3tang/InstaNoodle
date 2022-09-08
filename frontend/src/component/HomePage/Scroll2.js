@@ -23,9 +23,10 @@ function mapPress(){
         <>
             <div id="second-scroll-page">
                 <div id="press-swiper-container">
-                    <h1>Hello world</h1>
-                    <div className="press">
-                        {mapPress()}
+                    <div className="all-press">
+                        <div className="press">
+                            {mapPress()}
+                        </div>
                     </div>
                 </div>
             </div>
