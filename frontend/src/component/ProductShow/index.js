@@ -15,6 +15,15 @@ const ProductShow = () => {
         dispatch(fetchProduct(productId))
     }, [productId])
 
+    const handleInput = () => {
+        let input = parseInt(document.getElementById("show-input").value);
+        console.log(input + 1)
+        if (input > 0) {
+            setCount(input)
+        } else {
+            setCount("")
+        }
+    }
    
 
     const {id, name, photoUrl, price, desc} = product;
@@ -33,8 +42,8 @@ const ProductShow = () => {
                         <label for="show-quantity-container" id="show-label">Select Quantity</label>
                             <div className="show-quantity">
                                 <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
-                                <input type="text" value={count} onChange={(e) => (setCount(e.target.value) > 0 ? setCount(e.target.value) : setCount(1) )}></input>
-                                <button onClick={() => (setCount(parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
+                                <input type="text" id="show-input" value={count} onChange={handleInput}></input>
+                                <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
                             </div>
                     </div>
                     <button id="show-add-button">Add to cart</button>

@@ -16,7 +16,7 @@
 }
 
 #show-text-container div {
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
 }
 
 #show-picture img {
@@ -53,8 +53,8 @@
 .show-quantity > button {
     /* background-color: aqua; */
     text-align: center;
-    padding-left: 1.25vw;
-    padding-right: 1.25vw;
+    padding-left: 1.3vw;
+    padding-right: 1.3vw;
     padding-top: 0.75vh;
     padding-bottom: 0.75vh;
 }

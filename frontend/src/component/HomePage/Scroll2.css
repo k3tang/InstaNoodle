@@ -31,22 +31,22 @@
 @keyframes movePress{
     0% {
         transform: translate(0%);
-        transition-delay: 200ms;
+        transition-delay: 300ms;
         }
     
     20% {
         transform: translate(40%);
-        transition-delay: 200ms;
+        transition-delay: 300ms;
     }
 
     40% {
         transform: translate(80%);
-        transition-delay: 200ms;
+        transition-delay: 300ms;
     }
 
     60% {
         transform: translate(120%);
-        transition-delay: 200ms;
+        transition-delay: 3700ms;
     }
 
     80% {
