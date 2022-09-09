@@ -35,7 +35,7 @@ export const reset = () => {
 
 // selectors
 
-export const getItems = state => { 
+export const getCartItems = state => { 
     if (!state.cartItems) {
         return []
     } else {
@@ -53,7 +53,7 @@ export const fetchCartItems = () => async dispatch => {
 }
 
 export const createCartItem = (cartData) => async dispatch => {
-    const res = await csrfFetch('api/cart-items', {
+    const res = await csrfFetch('api/cart_items', {
         method: 'POST',
         body: JSON.stringify(cartData),
         headers: {
@@ -95,7 +95,7 @@ function cartReducer(state = {}, action) {
         case RECEIVE_ITEMS: 
             return action.payload.cartItems;
         case RECEIVE_ITEM:
-            return nextState[action.cartItem.id] = action.cartItem;
+            return nextState[action.item.id] = action.item;
         case REMOVE_ITEM: 
             delete nextState[action.itemId];
             return nextState;

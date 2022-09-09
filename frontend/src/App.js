@@ -9,6 +9,7 @@ import ProductsIndex from './component/ProductsPage';
 import AboutPage from './component/AboutPage';
 import RecipesIndex from './component/RecipesIndex';
 import ProductShow from './component/ProductShow';
+import CartIndexPage from './component/CartIndexPage';
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route exact path="/products/:productId">
           <ProductShow />
+        </Route>
+        <Route exact path="/cart">
+          <CartIndexPage/>
         </Route>
       </Switch>
     </>
