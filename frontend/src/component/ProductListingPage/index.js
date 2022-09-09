@@ -3,7 +3,7 @@ import "./ProductListingPage.css"
 import { Link } from "react-router-dom";
 
 const ProductListing = ({product}) => {
-    const { id, name, photoUrl, price, desc } = product;
+    const { id, name, photoUrl, price} = product;
 
     return (
         <>

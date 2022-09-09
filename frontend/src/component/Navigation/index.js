@@ -47,7 +47,7 @@ function Navigation() {
                     }
                 </div>
                 <div id="cart-link">
-                    <i className="fa-solid fa-cart-shopping"></i>
+                    <NavLink exact to="/cart" className="fa-solid fa-cart-shopping"></NavLink>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ const ProductShow = () => {
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
-    }, [productId])
+    }, [dispatch])
 
     const handleInput = () => {
         let input = parseInt(document.getElementById("show-input").value);
@@ -26,7 +26,7 @@ const ProductShow = () => {
     }
    
 
-    const {id, name, photoUrl, price, desc} = product;
+    const {name, photoUrl, price, desc} = product;
     
     return (
         <>
