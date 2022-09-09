@@ -101,6 +101,7 @@
     }
 
     #signup-cartoon {
-        width: 20vw;
+        width: 15vw;
+        bottom: 2vh;
     }
 }

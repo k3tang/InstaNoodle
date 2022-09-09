@@ -45,14 +45,15 @@ export const getItems = state => {
 
 // thunk action creators 
 
-export const fetchCartItems = (userId) => async dispatch => {
-    const res = await csrfFetch(`api/cartItems/${userId}`)
+//not sure if need userId... 
+export const fetchCartItems = () => async dispatch => {
+    const res = await csrfFetch('api/cart_items')
     const cartItems = await res.json();
     dispatch(receiveItems(cartItems))
 }
 
 export const createCartItem = (cartData) => async dispatch => {
-    const res = await csrfFetch(`api/cartItems`, {
+    const res = await csrfFetch('api/cart-items', {
         method: 'POST',
         body: JSON.stringify(cartData),
         headers: {
@@ -65,7 +66,7 @@ export const createCartItem = (cartData) => async dispatch => {
 }
 
 export const updateCartItem = (cartData) => async dispatch => {
-    const res = await csrfFetch(`api/cartItems/${cartData.id}`, {
+    const res = await csrfFetch(`api/cart_items/${cartData.id}`, {
         method: 'PATCH',
         body: JSON.stringify(cartData),
         headers: {
@@ -78,7 +79,7 @@ export const updateCartItem = (cartData) => async dispatch => {
 }
 
 export const deleteCartItem = (itemId) => async dispatch => {
-    const res = await csrfFetch(`api/cartItems/${itemId}`, {
+    const res = await csrfFetch(`api/cart_items/${itemId}`, {
         method: 'DELETE'
     })
     dispatch(removeItem(itemId))

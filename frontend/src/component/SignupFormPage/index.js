@@ -44,7 +44,7 @@ function SignupFormPage() {
             <ul id="signup-errors">
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
-            <div class="signup-input">
+            <div className="signup-input">
                 <input
                     type="text"
                     placeholder="Email"
@@ -53,7 +53,7 @@ function SignupFormPage() {
                     required
                 />
             </div>
-            <div class="signup-input">
+            <div className="signup-input">
                 <input
                     type="text"
                     placeholder="Name"
@@ -62,7 +62,7 @@ function SignupFormPage() {
                     required
                 />
             </div>   
-            <div class="signup-input">
+            <div className="signup-input">
                 <input
                     type="Password"
                     placeholder="Password"
@@ -71,7 +71,7 @@ function SignupFormPage() {
                     required
                 />
             </div>
-            <div class="signup-input">
+            <div className="signup-input">
                 <input
                     type="password"
                     placeholder="Confirm Password"
