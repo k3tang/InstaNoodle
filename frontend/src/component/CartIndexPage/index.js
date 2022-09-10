@@ -10,10 +10,11 @@ const Cart = () => {
     const cartItems = useSelector(getCartItems);
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         dispatch(fetchCartItems())
-        dispatch(fetchProducts())
-    }, [cartItems])
+        dispatch(fetchProducts()) 
+    }, [cartItems.length])
 
     const mapCartItems = () => { 
         return cartItems.map(cartItem => (

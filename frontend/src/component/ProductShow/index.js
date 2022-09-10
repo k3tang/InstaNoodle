@@ -81,9 +81,11 @@ const ProductShow = () => {
                     <div id="show-quantity-container">
                         <label htmlFor="show-quantity-container" id="show-label">Select Quantity</label>
                             <div className="show-quantity">
-                                <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
+                              
+                            <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
                                 <input type="text" id="show-input" value={count} onChange={handleInput}></input>
-                                <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
+                            <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
+                              
                             </div>
                     </div>
                     <button id="show-add-button" onClick={handleAddCart}>Add to cart</button>

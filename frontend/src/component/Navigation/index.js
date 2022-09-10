@@ -3,7 +3,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Navigation.css';
 import noodleIcon from "../../assets/ramen.png";
-import Modal from "../CartSlider"
 import { useState } from 'react';
 
 
@@ -50,7 +49,6 @@ function Navigation() {
                 <div id="cart-link">
                     <button 
                         className="fa-solid fa-cart-shopping"></button>
-                    {/* <Modal show={show}/> */}
                 </div>
             </div>
         </div>

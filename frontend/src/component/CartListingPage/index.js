@@ -1,33 +1,75 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './CartListingPage.css'
 import { fetchProduct, getProduct } from '../../store/products'
-import { deleteCartItem, fetchCartItems } from '../../store/cart'
+import { deleteCartItem, fetchCartItems, getCartItems, updateCartItem } from '../../store/cart'
 
 
 const CartListing = ({cartItem}) => {
+    const {quantity, productId, id} = cartItem;
     const dispatch = useDispatch();
-    const product = useSelector(getProduct(cartItem.productId))
+    const product = useSelector(getProduct(cartItem.productId));
+    const user = sessionStorage.getItem('currentUser');
+    const userId = JSON.parse(user).id;
+    const [count, setCount] = useState(quantity);
+    const [deleted, setDeleted] = useState(false);
+   
 
     useEffect(() => {
+        dispatch(fetchProduct(productId))
         dispatch(fetchCartItems())
-    },[])
+    },[deleted])
  
     if (!product) return null;
     const {name, photoUrl, price} = product;
 
     const handleDelete = (e) => {
         e.preventDefault();
-        dispatch(deleteCartItem(cartItem.id))
+        dispatch(deleteCartItem(id));
+        setDeleted(true);
+    }
+
+
+    const handleInput = () => {
+        let input = parseInt(document.getElementById("cart-input").value);
+        if (input > 0) {
+            setCount(input)
+        } else {
+            setCount("")
+        }
+    }
+
+    const handleUpdate = () => {
+        const upCartItem = {
+            cartItem: {
+                id: id,
+                quantity: count,
+                productId: productId,
+                userId: userId
+            }
+        }
+        return dispatch(updateCartItem(upCartItem))
     }
 
     return (
         <>
-            <img src={photoUrl} alt="product"/>
-            <div>{name}</div>
-            <div>${price}</div>
-            <div>quantity: {cartItem.quantity}</div>
-            <button value={cartItem.id} onClick={handleDelete}>Delete Cart Item</button>
+        <div id="cart-listing-wrapper">
+            <img id="cart-listing-img" src={photoUrl} alt="product"/>
+            <div>
+                <div className='listing-details'>{name}</div>
+                <div className='listing-details'>${price}</div>
+                <div className='listing-details'>Quantity: {quantity}</div>
+                    <div className='listing-details'>
+                        <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
+                        <input type="text" id="cart-input" value={count} onChange={handleInput}></input>
+                        <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
+                        <div onClick={handleUpdate}>Update Item</div>
+                </div>
+                   
+                <button className='listing-details' value={quantity} onClick={handleDelete}>Remove Item</button>
+            </div>
+
+        </div>
         </>
   
     )
