@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import LoginFormPage from './component/LoginFormPage';
 import SignupFormPage from './component/SignupFormPage';
 import Navigation from './component/Navigation';
@@ -44,6 +44,7 @@ function App() {
         <Route exact path="/cart">
           <CartIndexPage/>
         </Route>
+        <Redirect to="/"></Redirect>
       </Switch>
     </>
     

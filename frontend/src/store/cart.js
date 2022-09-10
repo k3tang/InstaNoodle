@@ -12,10 +12,10 @@ export const receiveItems = (payload) => {
     }
 }
 
-export const receiveItem = (item) => {
+export const receiveItem = (payload) => {
     return {
         type: RECEIVE_ITEM,
-        item
+        payload
     };
 };
 
@@ -43,17 +43,25 @@ export const getCartItems = state => {
     }
 }
 
+export const getCartItem = productId => state => {
+    if (!state.cartItems) {
+        return null
+    } else {
+         return state.cartItems[productId]
+    }
+}
+
 // thunk action creators 
 
-//not sure if need userId... 
 export const fetchCartItems = () => async dispatch => {
-    const res = await csrfFetch('api/cart_items')
+    const res = await csrfFetch('/api/cart_items')
     const cartItems = await res.json();
     dispatch(receiveItems(cartItems))
 }
 
+
 export const createCartItem = (cartData) => async dispatch => {
-    const res = await csrfFetch('api/cart_items', {
+    const res = await csrfFetch('/api/cart_items', {
         method: 'POST',
         body: JSON.stringify(cartData),
         headers: {
@@ -66,7 +74,7 @@ export const createCartItem = (cartData) => async dispatch => {
 }
 
 export const updateCartItem = (cartData) => async dispatch => {
-    const res = await csrfFetch(`api/cart_items/${cartData.id}`, {
+    const res = await csrfFetch(`/api/cart_items/${cartData.cartItem.id}`, {
         method: 'PATCH',
         body: JSON.stringify(cartData),
         headers: {
@@ -79,7 +87,7 @@ export const updateCartItem = (cartData) => async dispatch => {
 }
 
 export const deleteCartItem = (itemId) => async dispatch => {
-    const res = await csrfFetch(`api/cart_items/${itemId}`, {
+    const res = await csrfFetch(`/api/cart_items/${itemId}`, {
         method: 'DELETE'
     })
     dispatch(removeItem(itemId))
@@ -95,7 +103,7 @@ function cartReducer(state = {}, action) {
         case RECEIVE_ITEMS: 
             return action.payload.cartItems;
         case RECEIVE_ITEM:
-            return nextState[action.item.id] = action.item;
+           return {...nextState, ...action.payload.cartItem}
         case REMOVE_ITEM: 
             delete nextState[action.itemId];
             return nextState;

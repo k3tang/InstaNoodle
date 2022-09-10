@@ -20,7 +20,7 @@ before_action :require_logged_in
 
 
     def update 
-        set_cartItem
+         @cart_item = CartItem.find(params[:id])
         if @cart_item.update(cart_params)
             render 'api/cart_items/show'
         else 
@@ -29,7 +29,7 @@ before_action :require_logged_in
     end 
 
     def destroy
-        set_cartItem
+         @cart_item = CartItem.find(params[:id])
         if @cart_item.destroy
             render json: {message: 'Successfully removed from cart.'}
         end 
@@ -37,12 +37,9 @@ before_action :require_logged_in
 
     private 
 
-    def set_cartItem 
-        @cart_item = CartItem.find(params[:id])
-    end 
-
     def cart_params 
         params.require(:cart_item).permit(
+            :id,
             :product_id,
             :quantity,
             :user_id

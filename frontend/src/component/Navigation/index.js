@@ -3,11 +3,14 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Navigation.css';
 import noodleIcon from "../../assets/ramen.png";
+import Modal from "../CartSlider"
+import { useState } from 'react';
 
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
     const location = useLocation();
+    const [show, setShow] = useState(false);
 
 
     const color =() =>{
@@ -18,11 +21,9 @@ function Navigation() {
         }
     }
 
-
-
   return (
     <>
-    {console.log(location.pathname)}
+    {/* {console.log(location.pathname)} */}
         <div id="links-icons" className={color()}>
         <div id="main-logo">
                   <div><NavLink exact to="/">InstaNoodles</NavLink></div>
@@ -47,7 +48,9 @@ function Navigation() {
                     }
                 </div>
                 <div id="cart-link">
-                    <NavLink exact to="/cart" className="fa-solid fa-cart-shopping"></NavLink>
+                    <button 
+                        className="fa-solid fa-cart-shopping"></button>
+                    {/* <Modal show={show}/> */}
                 </div>
             </div>
         </div>

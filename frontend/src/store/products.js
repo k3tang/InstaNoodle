@@ -8,9 +8,9 @@ export const setProducts = payload => ({
     payload
 })
 
-export const setProduct = product => ({
+export const setProduct = payload => ({
     type: SET_PRODUCT,
-    product
+    payload
 })
 
 export const getProduct = productId => state => {
@@ -32,13 +32,13 @@ export const getProducts = state => {
 }
 
 export const fetchProducts = () => async dispatch => {
-    const res = await csrfFetch('api/products')
+    const res = await csrfFetch('/api/products')
     const products = await res.json();
     dispatch(setProducts(products))
 }
 
 export const fetchProduct = (productId) => async dispatch => {
-    const res = await csrfFetch(`api/products/${productId}`)
+    const res = await csrfFetch(`/api/products/${productId}`)
     const product = await res.json();
     dispatch(setProduct(product))
 }
@@ -51,7 +51,7 @@ function productsReducer(state = {}, action) {
         case SET_PRODUCTS:
             return action.payload.products;
         case SET_PRODUCT:
-            return nextState[action.product.id] = action.product;
+            return {...nextState, ...action.payload.product };
         default:
             return state;
     }

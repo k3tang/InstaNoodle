@@ -4,16 +4,30 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchProduct, getProduct } from "../../store/products";
 import { useEffect, useState } from "react";
+import { getCartItem, updateCartItem, createCartItem, fetchCartItems } from "../../store/cart";
 
 const ProductShow = () => {
     const {productId} = useParams();
     const dispatch = useDispatch();
+    const user = sessionStorage.getItem('currentUser')
     const product = useSelector(getProduct(productId));
+    const item = useSelector(getCartItem(productId))
     const [count, setCount] = useState(1);
+    const userId = JSON.parse(user).id
+
+  
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
-    }, [dispatch])
+        dispatch(fetchCartItems())
+    }, [productId])
+
+    useEffect(() => {
+        dispatch(getCartItem(productId))
+      
+    },[item])
+
+    if (!product) return null;
 
     const handleInput = () => {
         let input = parseInt(document.getElementById("show-input").value);
@@ -25,8 +39,34 @@ const ProductShow = () => {
         }
     }
    
-
     const {name, photoUrl, price, desc} = product;
+
+    //add to cart 
+ 
+    const handleAddCart = (e) => {
+        e.preventDefault();
+ 
+        if (!item ) {
+            const newItem = {
+                cartItem: {
+                    quantity: count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            return dispatch(createCartItem(newItem))
+        } else if (item) {
+            const updateItem = {
+                cartItem: {
+                    id: item.id,
+                    quantity: item.quantity + count,
+                    productId: Number(productId),
+                    userId: userId
+                }
+            }
+            return dispatch(updateCartItem(updateItem))
+        }
+    }
     
     return (
         <>
@@ -46,7 +86,7 @@ const ProductShow = () => {
                                 <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
                             </div>
                     </div>
-                    <button id="show-add-button">Add to cart</button>
+                    <button id="show-add-button" onClick={handleAddCart}>Add to cart</button>
             </div>    
         </div>
         </>
