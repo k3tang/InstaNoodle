@@ -1,0 +1,18 @@
+#cart-listing-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#cart-listing-img {
+    width: 12vw;
+    border-radius: 2vw;
+}
+
+.listing-details {
+    text-align: center;
+    font-size: 1vw;
+    width: 12vw;
+}
+

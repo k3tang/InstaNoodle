@@ -1,18 +1,18 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import './Navigation.css';
+import './navigation.css';
 import noodleIcon from "../../assets/ramen.png";
-import { useState } from 'react';
+
+
+
 
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
     const location = useLocation();
-    const [show, setShow] = useState(false);
 
-
-    const color =() =>{
+    const color = () =>{
         if (location.pathname === "/"){
             return "yellow"
         } else if (location.pathname === "/about") {
@@ -20,14 +20,26 @@ function Navigation() {
         }
     }
 
+    const openSidebar = () => {
+        let sidebar = document.getElementById("cart1")
+        console.log(sidebar)
+        sidebar.classList.add("openSidebar")
+    }
+
+    const closeSidebar = () => {
+        let sidebar = document.getElementById("cart1")
+        sidebar.classList.remove("openSidebar")
+    }
+
+    const history = useHistory();
+
   return (
     <>
-    {/* {console.log(location.pathname)} */}
+
         <div id="links-icons" className={color()}>
         <div id="main-logo">
                   <div><NavLink exact to="/">InstaNoodles</NavLink></div>
                   <img src={noodleIcon} alt="noodle-icon" />
-
         </div>
             <div id="nav-list">
                 <div id="products-link">
@@ -47,8 +59,9 @@ function Navigation() {
                     }
                 </div>
                 <div id="cart-link">
-                    <button 
-                        className="fa-solid fa-cart-shopping"></button>
+                    <div onClick={openSidebar}
+                        className="fa-solid fa-cart-shopping">
+                    </div>
                 </div>
             </div>
         </div>

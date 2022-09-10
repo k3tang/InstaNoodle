@@ -1,7 +1,8 @@
 import React from "react";
-import "./HomePage.css";
+import "./homepage.css";
 import splashPic from '../../assets/splash-pic.png';
-import ScrollTwo from "./Scroll2";
+import ScrollTwo from "./scrolltwo";
+import CartIndexPage from "../CartIndexPage"
 
 const HomePage = () => {
   
@@ -27,6 +28,7 @@ const HomePage = () => {
         <div id="second-scroll">
             <ScrollTwo />
         </div>
+        <div id="hidden-cart"><CartIndexPage /></div>
         </>
        
     )

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import "./ProductShow.css";
+import "./productshow.css";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchProduct, getProduct } from "../../store/products";
