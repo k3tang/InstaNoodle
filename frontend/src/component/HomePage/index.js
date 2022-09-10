@@ -28,7 +28,6 @@ const HomePage = () => {
         <div id="second-scroll">
             <ScrollTwo />
         </div>
-        <div id="hidden-cart"><CartIndexPage /></div>
         </>
        
     )

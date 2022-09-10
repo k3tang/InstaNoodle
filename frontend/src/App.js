@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <Navigation />
+      <CartIndexPage />
       <Switch>
         <Route exact path="/">
           <HomePage />

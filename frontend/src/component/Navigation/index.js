@@ -22,8 +22,10 @@ function Navigation() {
 
     const openSidebar = () => {
         let sidebar = document.getElementById("cart1")
+        document.getElementById("cart1").style.width = "30vw"
+        document.getElementById("cart1").style.marginRight = "0"
         console.log(sidebar)
-        sidebar.classList.add("openSidebar")
+
     }
 
     const closeSidebar = () => {
