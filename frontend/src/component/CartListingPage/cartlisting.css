@@ -12,7 +12,12 @@
 }
 
 #listing-text {
-    padding-top: 3vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    margin-left: 1vw;
+    width: 15vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 .listing-details {
     text-align: left;
@@ -36,8 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin-top: 0.5vh;
     width: 15vw;
     overflow: hidden;
@@ -46,38 +50,55 @@
 .cart-update {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 18vw;
 }
 
 #cart-input {
     width: 2vw;
     font-size: 1.15vw;
-    padding: 0.25vw;
     text-align: center;
     border-radius: 1vw;
     margin-right: 0.5vw;
     
 }
 
-.listing-buttons {
+#cart-button {
+    background-color: #ffe394;
     border-radius: 3vh;
-    padding: 0.25vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.25vw;
+    padding-bottom: 0.25vw;
+
     text-transform: uppercase;
+}
+
+.listing-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #cart-update {
     border: 1px solid black;
     font-size: 0.9vw;
-    width: 6vw;
 }
 
 #cart-remove {
-    margin-top: 0.5vh;
     font-size: 1.0vw;
-    width: 8vw;
     border: none;
-    background-color: #ffe394;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.listing-text-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+#listing-subtotal {
+    padding-right: 3vw;
 }
 
 #show-add-button:hover {

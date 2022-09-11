@@ -60,21 +60,25 @@ const CartListing = ({cartItem}) => {
         <div id="cart-listing-wrapper">
             <img id="cart-listing-img" src={photoUrl} alt="product"/>
             <div id="listing-text">
-                <div id="listing-name" className='listing-details'>{name}</div>
-                    <div id="listing-price" className='listing-details'>${(Math.round((price) * 100) / 100).toFixed(2)}</div> 
-                <div className='listing-details'>Amount: {quantity}</div>
-                <div className='listing-details'>Subtotal: ${(Math.round((quantity * price) * 100) / 100).toFixed(2)}</div>
-                    <div id="cart-quantity" className='listing-details'>
-                        <div className='cart-update'>
-                            <input type="text" id="cart-input" 
-                            placeholder={quantity} 
-                            onChange={handleInput}></input>
-                            <button id="cart-update" className='listing-buttons' onClick={handleUpdate}>Update</button>
-                        </div>
-                        <button id="cart-remove" className='listing-buttons' value={quantity} onClick={handleDelete}>Remove Item</button>
+                <div className="listing-text-first">
+                    <div id="listing-name" className='listing-details'>{name}</div>
+                     <button id="cart-remove" className="fa-solid fa-x" value={quantity} onClick={handleDelete}></button>
+                </div>
+                <div id="listing-price" className='listing-details'>${(Math.round((price) * 100) / 100).toFixed(2)}</div> 
+                <div className="listing-amount">
+                    <div className='listing-details'>Amount: {quantity}</div>
+                    <div className='listing-details' id="listing-subtotal"> ${(Math.round((quantity * price) * 100) / 100).toFixed(2)}</div>
+                </div>
+                <div id="cart-quantity" className='listing-details'>
+                    <div className='cart-update'>
+                        <input type="text" id="cart-input" 
+                        placeholder={quantity} 
+                        onChange={handleInput}></input>
+                        <button className='cart-update' id="cart-button" onClick={handleUpdate}>Update Item</button>
                     </div>
-            </div>
+                </div>
 
+            </div>
         </div>
         </>
   
