@@ -1,8 +1,12 @@
 import React from 'react';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, Redirect, useHistory, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import './navigation.css';
 import noodleIcon from "../../assets/ramen.png";
+import { useEffect } from 'react';
+import { getCartItems, fetchCartItems } from '../../store/cart';
+import { fetchProducts } from '../../store/products';
+
 
 
 export const closeSidebar = () => {
@@ -12,16 +16,32 @@ export const closeSidebar = () => {
     modalBackground.style.display = "none";
 }
 
+export const openSidebar = () => {
+    let modal = document.getElementById("cart-index");
+    let modalBackground = document.getElementById("modal-background");
+    modal.style.display = "block";
+    modalBackground.style.display = "block";
+}
+
 window.onclick = function (event) {
     let modal = document.getElementById("cart-index");
-    if (event.target == modal) {
+    let modalBackground = document.getElementById("modal-background");
+    if (event.target == modalBackground) {
         modal.style.display = "none";
+        modalBackground.style.display = "none";
     }
 }
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
+    const cartItems = useSelector(getCartItems);
+    const dispatch = useDispatch();
     const location = useLocation();
+
+    useEffect(() => {
+        dispatch(fetchCartItems())
+        dispatch(fetchProducts())
+    }, [cartItems.length])
 
     const color = () =>{
         if (location.pathname === "/"){
@@ -31,13 +51,14 @@ function Navigation() {
         }
     }
 
-    const openSidebar = () => {
-        let modal = document.getElementById("cart-index");
-        let modalBackground = document.getElementById("modal-background");
-        modal.style.display = "block";
-        modalBackground.style.display = "block";
-    }
 
+    const itemsNum = () => {
+        let totalNum = 0;
+        cartItems.forEach(cartItem => (
+            totalNum = totalNum + Number(cartItem.quantity)
+        ))
+        return totalNum;
+    }
 
   return (
     <>
@@ -64,10 +85,11 @@ function Navigation() {
                         <NavLink exact to="/account" className="fa-solid fa-user" user={sessionUser}></NavLink> : <NavLink exact to="/login" className="fa-solid fa-user"></NavLink>
                     }
                 </div>
-                <div id="cart-link">
-                    <div onClick={openSidebar}
+                <div className='cart-components'>
+                    <div id="cart-link" onClick={openSidebar}
                         className="fa-solid fa-cart-shopping">
                     </div>
+                    <div id="cart-number">{itemsNum()}</div>
                 </div>
             </div>
         </div>

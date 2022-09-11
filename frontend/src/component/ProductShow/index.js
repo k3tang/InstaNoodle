@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchProduct, getProduct } from "../../store/products";
 import { useEffect, useState } from "react";
 import { getCartItem, updateCartItem, createCartItem, fetchCartItems } from "../../store/cart";
+import { openSidebar } from "../Navigation";
 
 const ProductShow = () => {
     const {productId} = useParams();
@@ -29,7 +30,6 @@ const ProductShow = () => {
 
     const handleInput = () => {
         let input = parseInt(document.getElementById("show-input").value);
-        console.log(input + 1)
         if (input > 0) {
             setCount(input)
         } else {
@@ -42,12 +42,11 @@ const ProductShow = () => {
     //add to cart 
  
     const handleAddCart = (e) => {
-        console.log(user)
         e.preventDefault();
         if (!user) return history.push("/signup");
+        const userId = JSON.parse(user).id;
 
-
-        const userId = JSON.parse(user).id
+        openSidebar();
         if (!item ) {
             const newItem = {
                 cartItem: {

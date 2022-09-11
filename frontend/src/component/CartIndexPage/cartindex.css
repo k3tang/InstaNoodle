@@ -20,11 +20,50 @@
     position: fixed;
     top: 0;
     right: 0;
-    background-color: aqua;
+    background-color: white;
     width: 30%;
     height: 100%;
+    z-index: 1;
+    overflow-y: scroll;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
     animation-duration: 0.4s
+}
+
+#cart-index::-webkit-scrollbar {
+    width: 0.65vw;
+    height: 2vh;
+    padding-left: 0.5vw;
+    /* background-color: lightgray; */
+}
+
+#cart-index::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    border-radius: 50vh;
+    margin-right: 0.5vw;
+}
+
+#cart-header {
+    display: block;
+    text-align: center;
+    font-size: 3vw;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 3vh;
+}
+
+#close-cart {
+    display: block;
+    font-size: 1.75vw;
+    padding-right: 1vw;
+    padding-top: 2vh;
+    text-align: end;
+}
+
+#cart-listings {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }

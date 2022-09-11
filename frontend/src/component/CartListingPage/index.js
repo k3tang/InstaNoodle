@@ -20,7 +20,7 @@ const CartListing = ({cartItem}) => {
         dispatch(fetchProduct(productId))
         dispatch(fetchCartItems())
     },[deleted])
-    
+
     if (!user) return history.push("/signup");
     if (!product) return null;
     const {name, photoUrl, price} = product;
@@ -34,6 +34,7 @@ const CartListing = ({cartItem}) => {
 
     const handleInput = () => {
         let input = parseInt(document.getElementById("cart-input").value);
+        console.log(input)
         if (input > 0) {
             setCount(input)
         } else {
@@ -53,23 +54,25 @@ const CartListing = ({cartItem}) => {
         }
         return dispatch(updateCartItem(upCartItem))
     }
-
+    
     return (
         <>
         <div id="cart-listing-wrapper">
             <img id="cart-listing-img" src={photoUrl} alt="product"/>
-            <div>
-                <div className='listing-details'>{name}</div>
-                    <div className='listing-details'>${(Math.round(price * 100) / 100).toFixed(2)}</div>
-                <div className='listing-details'>Quantity: {quantity}</div>
-                    <div className='listing-details'>
-                        <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
-                        <input type="text" id="cart-input" value={count} onChange={handleInput}></input>
-                        <button onClick={() => setCount(parseInt(count) + 1)}>+</button>
-                        <div onClick={handleUpdate}>Update Item</div>
-                </div>
-                   
-                <button className='listing-details' value={quantity} onClick={handleDelete}>Remove Item</button>
+            <div id="listing-text">
+                <div id="listing-name" className='listing-details'>{name}</div>
+                    <div id="listing-price" className='listing-details'>${(Math.round((price) * 100) / 100).toFixed(2)}</div> 
+                <div className='listing-details'>Amount: {quantity}</div>
+                <div className='listing-details'>Subtotal: ${(Math.round((quantity * price) * 100) / 100).toFixed(2)}</div>
+                    <div id="cart-quantity" className='listing-details'>
+                        <div className='cart-update'>
+                            <input type="text" id="cart-input" 
+                            placeholder={quantity} 
+                            onChange={handleInput}></input>
+                            <button id="cart-update" className='listing-buttons' onClick={handleUpdate}>Update</button>
+                        </div>
+                        <button id="cart-remove" className='listing-buttons' value={quantity} onClick={handleDelete}>Remove Item</button>
+                    </div>
             </div>
 
         </div>

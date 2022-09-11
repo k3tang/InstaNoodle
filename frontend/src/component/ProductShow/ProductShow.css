@@ -86,12 +86,8 @@
     text-transform: uppercase;
 }
 
-#show-add-button:hover {
-    background-color: black;
-    color: white;
-}
 
-.show-quantity button:hover {
+.show-quantity button:hover, #show-add-button:hover {
     background-color: black;
     color: white;
     

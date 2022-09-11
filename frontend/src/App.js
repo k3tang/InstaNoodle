@@ -10,7 +10,6 @@ import AboutPage from './component/AboutPage';
 import RecipesIndex from './component/RecipesIndex';
 import ProductShow from './component/ProductShow';
 import CartIndexPage from './component/CartIndexPage';
-import './app.css'
 
 
 function App() {

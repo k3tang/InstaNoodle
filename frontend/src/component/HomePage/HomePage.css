@@ -2,6 +2,14 @@
     font-family: 'T-Star Bold';
 }
 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
 #splash-page {
     background-color: #ffe394;
     display: flex;
