@@ -37,8 +37,9 @@ export const login = (user) => async (dispatch) => {
     });
 
     const data = await response.json();
+    storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
-    return response;
+    return response;            
 };
 
 export const signup = (user) => async (dispatch) => {

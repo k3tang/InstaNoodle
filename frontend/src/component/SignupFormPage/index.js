@@ -4,6 +4,7 @@ import { NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './signupform.css';
 import cartoon from "../../assets/login-image.jpg"
+import { fetchCartItems } from "../../store/cart";
 
 function SignupFormPage() {
     const dispatch = useDispatch();

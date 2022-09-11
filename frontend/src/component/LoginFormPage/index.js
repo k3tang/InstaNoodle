@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './loginform.css';
 import {NavLink} from 'react-router-dom';
-import cartoon from "../../assets/login-image.jpg"
+import cartoon from "../../assets/login-image.jpg";
+import { fetchCartItems } from '../../store/cart';
 
 function LoginFormPage() {
     const dispatch = useDispatch();
@@ -13,7 +14,10 @@ function LoginFormPage() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to='/account'/>;
+    if (sessionUser) {
+        dispatch(fetchCartItems())
+        return <Redirect to='/account'/>;
+    }
 
     const handleSubmit = e => {
         e.preventDefault();

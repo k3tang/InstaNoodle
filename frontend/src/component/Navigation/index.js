@@ -39,9 +39,10 @@ function Navigation() {
     const location = useLocation();
 
     useEffect(() => {
-        dispatch(fetchCartItems())
-        dispatch(fetchProducts())
-    }, [cartItems.length])
+        dispatch(fetchCartItems());
+        dispatch(fetchProducts());
+
+    }, [cartItems.length, sessionUser])
 
     const color = () =>{
         if (location.pathname === "/"){
@@ -51,7 +52,6 @@ function Navigation() {
         }
     }
 
-
     const itemsNum = () => {
         let totalNum = 0;
         cartItems.forEach(cartItem => (
@@ -59,6 +59,7 @@ function Navigation() {
         ))
         return totalNum;
     }
+
 
   return (
     <>

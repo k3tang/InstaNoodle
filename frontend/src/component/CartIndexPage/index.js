@@ -15,12 +15,15 @@ const Cart = () => {
     const user = sessionStorage.getItem("currentUser");
     const history = useHistory();
 
-
-
     useEffect(() => {
         dispatch(fetchCartItems())
         dispatch(fetchProducts()) 
     }, [cartItems.length])
+
+    useEffect(() => {
+        dispatch(fetchCartItems())
+        dispatch(fetchProducts()) 
+    },[user])
 
     const mapCartItems = () => { 
         console.log(cartItems)
@@ -32,13 +35,19 @@ const Cart = () => {
             ))}
     }
 
+    const handleLogin = (e) => {
+        e.preventDefault();
+        closeSidebar();
+        history.push("/login");
+    }
     return (
         <>
         <div id='modal-background'></div>
         <div id="cart-index">
                 <div id="close-cart" className="fa-solid fa-x" onClick={closeSidebar}></div>
                 <h1 id="cart-header">Cart Items</h1>
-            {user ? <div id="cart-listings">{mapCartItems()}</div> : <button onClick={history.push("/login")}>Login for cart</button>}
+                {user ? <div id="cart-listings">{mapCartItems()}</div> : <button id="cart-login" onClick={handleLogin}>Login to cart</button>}
+                {/* {(cartItems.length > 0) ? <button onClick={history.push("/account")}>Checkout</button> : null} */}
 
         </div>
         </>
