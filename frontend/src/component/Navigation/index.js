@@ -5,7 +5,12 @@ import './navigation.css';
 import noodleIcon from "../../assets/ramen.png";
 
 
-
+export const closeSidebar = () => {
+    document.getElementById("cart-index").style.width = "0";
+    document.getElementById("cart-index").style.marginRight = "0";
+    document.getElementById("main-page").style.width = "100%";
+    document.getElementById("links-icons").style.width = "100%";
+}
 
 
 function Navigation() {
@@ -21,19 +26,13 @@ function Navigation() {
     }
 
     const openSidebar = () => {
-        let sidebar = document.getElementById("cart1")
-        document.getElementById("cart1").style.width = "30vw"
-        document.getElementById("cart1").style.marginRight = "0"
-        console.log(sidebar)
-
+        let sidebar = document.getElementById("cart-index")
+        document.getElementById("cart-index").style.width = "30%"
+        document.getElementById("cart-index").style.marginRight = "0";
+        document.getElementById("main-page").style.width = "70%";
+        document.getElementById("links-icons").style.width = "70%";
     }
 
-    const closeSidebar = () => {
-        let sidebar = document.getElementById("cart1")
-        sidebar.classList.remove("openSidebar")
-    }
-
-    const history = useHistory();
 
   return (
     <>

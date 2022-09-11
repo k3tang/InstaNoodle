@@ -59,6 +59,11 @@ a:link {
     padding-left: 1.5vw;
 }
 
+#recipes-link {
+    word-wrap: wrap;
+    word-break: break-all;
+}
+
 .yellow{
     background-color:#ffe394 ;
 }
@@ -67,7 +72,7 @@ a:link {
     background-color: #feb8af;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1500px) {
     #links-icons {
         border-bottom: 1px solid black;
     }

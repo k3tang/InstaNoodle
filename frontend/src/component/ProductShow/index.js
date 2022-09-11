@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import "./productshow.css";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchProduct, getProduct } from "../../store/products";
 import { useEffect, useState } from "react";
@@ -13,9 +13,7 @@ const ProductShow = () => {
     const product = useSelector(getProduct(productId));
     const item = useSelector(getCartItem(productId))
     const [count, setCount] = useState(1);
-    const userId = JSON.parse(user).id
-
-  
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
@@ -44,8 +42,12 @@ const ProductShow = () => {
     //add to cart 
  
     const handleAddCart = (e) => {
+        console.log(user)
         e.preventDefault();
- 
+        if (!user) return history.push("/signup");
+
+
+        const userId = JSON.parse(user).id
         if (!item ) {
             const newItem = {
                 cartItem: {

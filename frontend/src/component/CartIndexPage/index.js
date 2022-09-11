@@ -4,6 +4,7 @@ import CartListing from '../CartListingPage';
 import './cartindex.css'
 import { fetchCartItems, getCartItems } from '../../store/cart';
 import { fetchProducts } from '../../store/products';
+import { closeSidebar } from '../Navigation';
 
 
 
@@ -25,12 +26,11 @@ const Cart = () => {
 
     return (
         <>
-            <div id="cart1">
+                <div id="close-cart" onClick={closeSidebar}>X</div>
                 <h1>Cart Items</h1>
                 <div id="cart-listings">
                     {mapCartItems()}
                 </div>
-            </div>
         </>
     )
 }

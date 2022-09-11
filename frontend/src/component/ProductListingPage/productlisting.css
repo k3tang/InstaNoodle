@@ -3,21 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .product-image img {
-    width: 15vw;
-    border-radius: 2vw;
+    width: 100%;
+    object-fit: contain;
+    max-height: 30vh;
+    border-radius: 3vw;
 }
 
 .product-text {
-    width: 15vw;
+    width: 90%;
     text-align: left;
-    padding-left: 1vw;
+    padding-left: 5%;
 }
 
 .product-item {
-    width: 80%;
+    width: 90%;
     text-transform: uppercase;
     font-size: 1.25vw;
     margin-top: 2vh;

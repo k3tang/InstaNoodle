@@ -97,7 +97,7 @@
     
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1500px) {
     #show-component {
         flex-wrap: wrap;
         height: 100vh;

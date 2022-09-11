@@ -1,7 +1,6 @@
 class Api::CartItemsController < ApplicationController
-# wrap_parameters include: CartItem.attribute_names + [:photo], format: :multipart_form
 
-before_action :require_logged_in
+before_action :require_logged_in, only: [:create, :destroy]
 
     def index 
         user_id = current_user[:id]

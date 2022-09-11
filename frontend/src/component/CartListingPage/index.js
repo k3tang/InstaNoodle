@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './cartlisting.css'
 import { fetchProduct, getProduct } from '../../store/products'
 import { deleteCartItem, fetchCartItems, getCartItems, updateCartItem } from '../../store/cart'
+import { useHistory } from 'react-router-dom'
 
 
 const CartListing = ({cartItem}) => {
@@ -10,16 +11,17 @@ const CartListing = ({cartItem}) => {
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
     const user = sessionStorage.getItem('currentUser');
-    const userId = JSON.parse(user).id;
     const [count, setCount] = useState(quantity);
     const [deleted, setDeleted] = useState(false);
+    const history = useHistory();
    
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
         dispatch(fetchCartItems())
     },[deleted])
- 
+    
+    if (!user) return history.push("/signup");
     if (!product) return null;
     const {name, photoUrl, price} = product;
 
@@ -40,6 +42,7 @@ const CartListing = ({cartItem}) => {
     }
 
     const handleUpdate = () => {
+        const userId = JSON.parse(user).id;
         const upCartItem = {
             cartItem: {
                 id: id,
@@ -57,7 +60,7 @@ const CartListing = ({cartItem}) => {
             <img id="cart-listing-img" src={photoUrl} alt="product"/>
             <div>
                 <div className='listing-details'>{name}</div>
-                <div className='listing-details'>${price}</div>
+                    <div className='listing-details'>${(Math.round(price * 100) / 100).toFixed(2)}</div>
                 <div className='listing-details'>Quantity: {quantity}</div>
                     <div className='listing-details'>
                         <button onClick={() => ((parseInt(count) - 1) > 0 ? setCount(parseInt(count) - 1) : setCount(1))}>-</button>
