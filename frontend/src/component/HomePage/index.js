@@ -10,7 +10,7 @@ const HomePage = () => {
         <>  
         <div id="splash-page">
             <div id="splash-text">
-                <h1>
+                <h1 id="splash-header">
                     Nutritionally Complete Instant Noodles
                 </h1>
                 <h2>

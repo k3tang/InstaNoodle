@@ -18,9 +18,7 @@ function App() {
     <>
       <div className="main-container">
         <Navigation />
-        <div id='cart-index'>
-          <CartIndexPage />
-        </div>
+        <CartIndexPage />
         <div id="main-page">
           <Switch>
             <Route exact path="/">

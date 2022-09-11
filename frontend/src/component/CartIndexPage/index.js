@@ -26,11 +26,14 @@ const Cart = () => {
 
     return (
         <>
-                <div id="close-cart" onClick={closeSidebar}>X</div>
-                <h1>Cart Items</h1>
-                <div id="cart-listings">
-                    {mapCartItems()}
-                </div>
+        <div id='modal-background'></div>
+        <div id="cart-index">
+            <div id="close-cart" onClick={closeSidebar}>X</div>
+            <h1>Cart Items</h1>
+            <div id="cart-listings">
+                {mapCartItems()}
+            </div>
+        </div>
         </>
     )
 }

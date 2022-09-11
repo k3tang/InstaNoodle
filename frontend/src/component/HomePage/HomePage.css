@@ -15,7 +15,7 @@
 }
 
 #splash-pic > img {
-    max-width: 100%;
+    width: 100%;
     max-height: 100%;
     border-radius: 5%;
 }
@@ -35,7 +35,7 @@
     text-transform: uppercase;
 }
 
-#splash-text h1 {
+#splash-header {
     font-size: 6.5vw;
   
 }

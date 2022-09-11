@@ -1,9 +1,9 @@
-#main-container {
+/* #main-container {
     width: 100%;
-}
+} */
 
-#cart-index {
-    /* display: inline-block; */
+/* #cart-index {
+
     z-index: 1;
     height: 100%;
     width: 0;
@@ -13,6 +13,6 @@
     background-color: #2b9348;
     overflow-x: hidden;
     padding-top: 60px;
-}
+} */
 
 
