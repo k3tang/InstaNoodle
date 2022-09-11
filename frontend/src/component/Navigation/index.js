@@ -33,7 +33,7 @@ window.onclick = function (event) {
 }
 
 function Navigation() {
-    const sessionUser = useSelector(state => state.session.user);
+    const sessionUser = sessionStorage.getItem("currentUser")
     const cartItems = useSelector(getCartItems);
     const dispatch = useDispatch();
     const location = useLocation();
@@ -54,6 +54,8 @@ function Navigation() {
 
     const itemsNum = () => {
         let totalNum = 0;
+        if (!sessionUser) return totalNum;
+        
         cartItems.forEach(cartItem => (
             totalNum = totalNum + Number(cartItem.quantity)
         ))
