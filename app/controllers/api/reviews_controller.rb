@@ -3,6 +3,7 @@ class Api::ReviewsController < ApplicationController
     def index 
         user_id = current_user[:id]
         @reviews = Review.where(user_id: user_id)
+        render 'api/review/index'
     end 
 
     def create
@@ -19,6 +20,9 @@ class Api::ReviewsController < ApplicationController
 
     def review_params
         params.require(:review).permit(
-            :)
+            :review,
+            :user_id,
+            :product_id,
+            :rating)
     end 
 end
