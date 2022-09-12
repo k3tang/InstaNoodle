@@ -88,7 +88,7 @@ a:link {
     background-color: #feb8af;
 }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 1024px) {
     #links-icons {
         border-bottom: 1px solid black;
     }

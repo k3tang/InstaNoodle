@@ -82,7 +82,7 @@
     width: 9vw;
 }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 1024px) {
     #login-component {
         padding-top: 5vh;
     }

@@ -47,5 +47,10 @@ export const getReviews = state => {
 
  export const fetchReviews = () => async dispatch => {
     const res = csrfFetch('/api/reviews')
-    const reviews = (await res).json()
+    const reviews = await res.json()
+    dispatch(receiveReviews(reviews))
+ }
+
+ export const createReview = (payload) => async dispatch => {
+    const res = crsfFetch('/api/reviews')
  }
