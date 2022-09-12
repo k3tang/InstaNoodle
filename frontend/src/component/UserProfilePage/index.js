@@ -29,7 +29,6 @@ function UserProfile() {
                     <button onClick={openSidebar}>Cart</button>
                     <button onClick={logout}>Logout</button>
                 </div>
-                <h2>Order History</h2>
             </div>
             </>
         )

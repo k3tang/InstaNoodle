@@ -27,12 +27,6 @@ export const removeItem = (itemId) => {
     };
 };
 
-export const reset = () => {
-    return {
-        type: RESET
-    };
-};
-
 // selectors
 
 export const getCartItems = state => { 

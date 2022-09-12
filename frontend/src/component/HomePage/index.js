@@ -2,7 +2,7 @@ import React from "react";
 import "./homepage.css";
 import splashPic from '../../assets/splash-pic.png';
 import ScrollTwo from "./scrolltwo";
-import CartIndexPage from "../CartIndexPage"
+import ScrollThree from "./scrollthree";
 
 const HomePage = () => {
   
@@ -27,6 +27,9 @@ const HomePage = () => {
         </div>
         <div id="second-scroll">
             <ScrollTwo />
+        </div>
+        <div id="third-scroll">
+            <ScrollThree />
         </div>
         </>
        

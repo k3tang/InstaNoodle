@@ -62,6 +62,7 @@
         }
 }
 
+/* noodle path */
 
 svg.text-path {
     width: 100%;
@@ -76,3 +77,46 @@ svg.text-path {
 }
 
 
+/* feature chart */
+
+.pure-g {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: end;
+    align-items: flex-end;
+    overflow-x: hidden;
+    padding-top: 5vh;
+    /* box-sizing:border-box; */
+    
+}
+.pure-u-lg-1-6 {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.feature-img {
+    display: block;
+    margin: auto;
+    max-width: 12vw;
+   /* height: 15vh; */
+}
+
+.feature-header {
+    text-align: center;
+    font-size: 1.75vw;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    letter-spacing: 0.03em;
+}
+
+.feature-text {
+    display: block;
+    font-size: 1.2vw;
+    font-family: 'T-Star Regular';
+    letter-spacing: 0.04em;
+    text-align: center;
+    width: 10vw;
+    height: 12vh;
+    margin: auto;
+
+}

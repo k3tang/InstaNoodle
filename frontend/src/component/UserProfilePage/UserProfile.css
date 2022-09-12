@@ -3,8 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
+    font-size: 3.25vw;
     margin-top: 8vh;
+    text-transform: uppercase;
 }
 
 #profile-buttons {
@@ -27,14 +28,3 @@
     padding: 0.75vw;
 }
 
-#profile-component h2 {
-    margin-top: 3.5vh;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    padding-left: 15vw;
-    padding-right: 15vw;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    font-size: 3vw;
-    letter-spacing: 0.02em;
-}
