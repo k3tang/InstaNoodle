@@ -15,6 +15,21 @@ class Api::ReviewsController < ApplicationController
         end 
     end 
 
+    def update 
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render 'api/review/show'
+        else 
+            render json: {errors: ["Unable to update review"]}, status: 422
+        end 
+    end 
+
+    def destroy 
+        @review = Review.find(params[:id])
+        if @review.destroy
+            render json: { message: "Successfully removed from cart."}
+        end 
+    end 
 
     private 
 

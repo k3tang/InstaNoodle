@@ -17,7 +17,6 @@ const Cart = () => {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(cartItems.length)
         dispatch(fetchCartItems())
         dispatch(fetchProducts()) 
     }, [cartItems.length])
