@@ -34,6 +34,7 @@ before_action :require_logged_in, only: [:create, :destroy]
         end 
     end 
 
+
     private 
 
     def cart_params 

@@ -20,12 +20,13 @@ export const receiveItem = (payload) => {
 };
 
 
-export const removeItem = (itemId) => {
+export const removeItem = (cartItemId) => {
     return {
         type: REMOVE_ITEM,
-        itemId
+        cartItemId
     };
 };
+
 
 // selectors
 
@@ -80,11 +81,11 @@ export const updateCartItem = (cartData) => async dispatch => {
     dispatch(receiveItem(cartItem))
 }
 
-export const deleteCartItem = (itemId) => async dispatch => {
-    const res = await csrfFetch(`/api/cart_items/${itemId}`, {
+export const deleteCartItem = (cartItem) => async dispatch => {
+    const res = await csrfFetch(`/api/cart_items/${cartItem.id}`, {
         method: 'DELETE'
     })
-    dispatch(removeItem(itemId))
+    dispatch(removeItem(cartItem.productId))
 }
 
 // reducer - populates the view 
@@ -99,7 +100,7 @@ function cartReducer(state = {}, action) {
         case RECEIVE_ITEM:
            return {...nextState, ...action.payload.cartItem}
         case REMOVE_ITEM: 
-            delete nextState[action.itemId];
+            delete nextState[action.cartItemId];
             return nextState;
         default:
             return state;

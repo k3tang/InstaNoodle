@@ -17,6 +17,7 @@ const Cart = () => {
     const history = useHistory();
 
     useEffect(() => {
+        console.log(cartItems.length)
         dispatch(fetchCartItems())
         dispatch(fetchProducts()) 
     }, [cartItems.length])
@@ -37,7 +38,7 @@ const Cart = () => {
 
     const deleteCart = () => {
         return cartItems.map(cartItem => (
-            dispatch(deleteCartItem(cartItem.id))
+            dispatch(deleteCartItem( cartItem))
         ))
     }
 

@@ -17,9 +17,12 @@ const ScrollThree = () => {
     //     // clip.addEventListener('mouseout', function(e){clip.pause()})
     // })
 
+    const soupWrapper = document.getElementById("soup-outer-container")
+
+
     return (
         <>
-            <Swiper className="soup-swiper"
+            <Swiper className="soup-swiper" id="soup-outer-container"
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={0}
                 slidesPerView={2.15}
@@ -31,7 +34,8 @@ const ScrollThree = () => {
                 <SwiperSlide className="soup-inner-wrapper">
                     <div className="soup" id="kimchi-soup">
                         <div className="soup-img-wrapper">
-                            <video onMouseOver={(e) => e.target.play()}className="soup-video" src={kimchiVideo} alt="kimchi-soup-video"/>
+                            <video onMouseOver={(e) => e.target.play()} onClick={() => soupWrapper.style.backgroundColor = "#feb8af"} 
+                            className="soup-video" src={kimchiVideo} alt="kimchi-soup-video"/>
                         </div>
                         <div className="soup-header">Spicy Kimchi</div>
                         <div className="soup-button">Try Now</div>
@@ -40,7 +44,8 @@ const ScrollThree = () => {
                 <SwiperSlide className="soup-inner-wrapper">
                     <div className="soup" id="curry-soup">
                         <div className="soup-img-wrapper">
-                            <video onMouseOver={(e) => e.target.play()} className="soup-video" src={curryVideo} alt="curry-soup-video" />
+                            <video onMouseOver={(e) => e.target.play()}
+                                onClick={() => soupWrapper.style.backgroundColor = "#ffe394"} className="soup-video" src={curryVideo} alt="curry-soup-video" />
                         </div>
                         <div className="soup-header">Yellow Curry</div>
                         <div className="soup-button">Try Now</div>
@@ -49,7 +54,9 @@ const ScrollThree = () => {
                 <SwiperSlide className="soup-inner-wrapper">
                     <div className="soup" id="miso-soup">
                         <div className="soup-img-wrapper">
-                            <video onMouseOver={(e) => e.target.play()} className="soup-video" src={misoVideo} alt="miso-soup-video" />
+                            <video onMouseOver={(e) => e.target.play()}
+                                onClick={() => soupWrapper.style.backgroundColor = "#bddabd"} 
+                             className="soup-video" src={misoVideo} alt="miso-soup-video" />
                         </div>
                         <div className="soup-header">Smoky mushroom and miso</div>
                         <div className="soup-button">Try Now</div>
