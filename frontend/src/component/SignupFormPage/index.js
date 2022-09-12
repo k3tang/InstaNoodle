@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './signupform.css';
+import './index.css';
 import cartoon from "../../assets/login-image.jpg"
 import { fetchCartItems } from "../../store/cart";
 
