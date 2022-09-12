@@ -1,4 +1,4 @@
-import "./scrollthree.css";
+import "./index.css";
 import kimchiVideo from "../../assets/scroll-three/spicy-kimchi.webm";
 import curryVideo from "../../assets/scroll-three/yellow-curry.webm";
 import misoVideo from "../../assets/scroll-three/smoky-mushroom.webm";

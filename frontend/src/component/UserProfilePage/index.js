@@ -1,5 +1,5 @@
 import React from "react";
-import "./userprofile.css";
+import "./index.css";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";

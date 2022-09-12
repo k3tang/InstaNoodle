@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CartListing from '../CartListingPage';
-import './cartindex.css'
+import './index.css'
 import { fetchCartItems, getCartItems, deleteCartItem } from '../../store/cart';
 import { fetchProducts } from '../../store/products';
 import { closeSidebar } from '../Navigation';

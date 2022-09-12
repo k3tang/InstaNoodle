@@ -1,5 +1,5 @@
 import React from "react";
-import "./recipe.css";
+import "./index.css";
 
 const RecipesIndex = () => {
     return (

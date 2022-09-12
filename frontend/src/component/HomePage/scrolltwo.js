@@ -1,4 +1,4 @@
-import "./scrolltwo.css"
+import "./index.css"
 import press1 from "../../assets/press-logos/press1.png"
 import press2 from "../../assets/press-logos/press2.png"
 import press3 from "../../assets/press-logos/press3.png"

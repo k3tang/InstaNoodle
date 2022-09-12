@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Redirect, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import './navigation.css';
+import './index.css';
 import noodleIcon from "../../assets/ramen.png";
 import { useEffect } from 'react';
 import { getCartItems, fetchCartItems } from '../../store/cart';

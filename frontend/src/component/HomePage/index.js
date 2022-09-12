@@ -1,5 +1,5 @@
 import React from "react";
-import "./homepage.css";
+import "./index.css";
 import splashPic from '../../assets/splash-pic.png';
 import ScrollTwo from "./scrolltwo";
 import ScrollThree from "./scrollthree";
