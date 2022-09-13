@@ -3,7 +3,6 @@ import csrfFetch from "./csrf";
 const RECEIVE_ITEMS = 'cartItem/RECEIVE_ITEMS'
 const RECEIVE_ITEM = 'cartItem/RECEIVE_ITEM';
 const REMOVE_ITEM = 'cartItem/REMOVE_ITEM';
-const RESET = 'cartItem/RESET';
 
 export const receiveItems = (payload) => {
     return {

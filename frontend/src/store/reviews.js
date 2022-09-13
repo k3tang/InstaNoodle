@@ -78,11 +78,11 @@ export const getReviews = state => {
     dispatch(receiveReview(review))
  }
 
- export const deleteReview = (reviewId) => async dispatch => {
-    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+ export const deleteReview = (review) => async dispatch => {
+    const res = await csrfFetch(`/api/reviews/${review}`, {
         method: "DELETE"
     })
-    dispatch(removeReview(reviewId))
+    dispatch(removeReview(review))
  }
 
  //reducer 

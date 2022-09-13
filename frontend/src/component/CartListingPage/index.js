@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 import { fetchProduct, getProduct } from '../../store/products'
-import { deleteCartItem, fetchCartItems, getCartItems, updateCartItem } from '../../store/cart'
+import { deleteCartItem, fetchCartItems, updateCartItem } from '../../store/cart'
 import { useHistory } from 'react-router-dom'
+
 
 
 const CartListing = ({cartItem}) => {
@@ -14,6 +15,7 @@ const CartListing = ({cartItem}) => {
     const [count, setCount] = useState(quantity);
     const [deleted, setDeleted] = useState(false);
     const history = useHistory();
+   
    
 
     useEffect(() => {
@@ -53,7 +55,7 @@ const CartListing = ({cartItem}) => {
         }
         return dispatch(updateCartItem(upCartItem))
     }
-    
+
     return (
         <>
         <div id="cart-listing-wrapper">
@@ -76,7 +78,6 @@ const CartListing = ({cartItem}) => {
                         <button className='cart-update' id="cart-button" onClick={handleUpdate}>Update Item</button>
                     </div>
                 </div>
-
             </div>
         </div>
         </>

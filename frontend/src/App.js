@@ -5,7 +5,7 @@ import SignupFormPage from './component/SignupFormPage';
 import Navigation from './component/Navigation';
 import HomePage from './component/HomePage';
 import UserProfile from './component/UserProfilePage';
-import ProductsIndex from './component/ProductsPage';
+import ProductsIndex from './component/ProductsIndexPage';
 import AboutPage from './component/AboutPage';
 import RecipesIndex from './component/RecipesIndex';
 import ProductShow from './component/ProductShow';

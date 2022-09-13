@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { fetchProduct, getProduct } from "../../store/products";
 import { useEffect, useState } from "react";
 import { getCartItem, updateCartItem, createCartItem, fetchCartItems } from "../../store/cart";
-import { openSidebar } from "../Navigation";
+import { openSidebar } from "../Navigation"; import ReviewIndexPage from '../ReviewIndexPage';
+import { fetchReviews } from '../../store/reviews';
 
 const ProductShow = () => {
     const {productId} = useParams();
@@ -19,11 +20,11 @@ const ProductShow = () => {
     useEffect(() => {
         dispatch(fetchProduct(productId))
         dispatch(fetchCartItems())
+        dispatch(fetchReviews(productId))
     }, [productId])
 
     useEffect(() => {
         dispatch(getCartItem(productId))
-      
     },[item])
 
     if (!product) return null;
@@ -91,6 +92,10 @@ const ProductShow = () => {
                     </div>
                     <button id="show-add-button" onClick={handleAddCart}>Add to cart</button>
             </div>    
+        </div>
+        <div className='reviews-container'>
+            <div>hi hi</div>
+            <ReviewIndexPage props={productId} />
         </div>
         </>
     )
