@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Redirect, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './index.css';
 import noodleIcon from "../../assets/ramen.png";
@@ -11,21 +11,21 @@ import { fetchProducts } from '../../store/products';
 
 export const closeSidebar = () => {
     let modal = document.getElementById("cart-index");
-    let modalBackground = document.getElementById("modal-background");
+    let modalBackground = document.getElementById("cart-modal-background");
     modal.style.display = "none";
     modalBackground.style.display = "none";
 }
 
 export const openSidebar = () => {
     let modal = document.getElementById("cart-index");
-    let modalBackground = document.getElementById("modal-background");
+    let modalBackground = document.getElementById("cart-modal-background");
     modal.style.display = "block";
     modalBackground.style.display = "block";
 }
 
 window.onclick = function (event) {
     let modal = document.getElementById("cart-index");
-    let modalBackground = document.getElementById("modal-background");
+    let modalBackground = document.getElementById("cart-modal-background");
     if (event.target == modalBackground) {
         modal.style.display = "none";
         modalBackground.style.display = "none";

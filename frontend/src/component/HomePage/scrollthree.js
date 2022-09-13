@@ -4,12 +4,8 @@ import curryVideo from "../../assets/scroll-three/yellow-curry.webm";
 import misoVideo from "../../assets/scroll-three/smoky-mushroom.webm";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-// import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { useRef } from "react";
-import { connect } from "react-redux";
+
 
 
 const ScrollThree = () => { 
@@ -22,9 +18,13 @@ const ScrollThree = () => {
                 slidesPerView={2.15}
                 loop={true}
                 speed={500}
-                noSwiping={true}
+                // noSwiping={true}
+                // noSwipingClass={"soup-inner-wrapper"}
+                allowTouchMove={false}
+                allowSlidePrev={false}
                 slideToClickedSlide={true}
                 centeredSlides={true}
+                pr
                 ref={container}
                 >
                 <SwiperSlide className="soup-inner-wrapper">

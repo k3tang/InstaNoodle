@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render 'api/reviews/show'
         else 
-            render json: {errors: ["Unable to create review"]}, status: 422
+            render json: {errors: ["Please fill in all fields"]}, status: 422
         end 
     end 
 
@@ -20,7 +20,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render 'api/reviews/show'
         else 
-            render json: {errors: ["Unable to update review"]}, status: 422
+            render json: {errors: ["Please fill in all fields"]}, status: 422
         end 
     end 
 
@@ -37,6 +37,7 @@ class Api::ReviewsController < ApplicationController
             :user_id,
             :product_id,
             :rating,
+            :title,
             :body)
     end 
 end

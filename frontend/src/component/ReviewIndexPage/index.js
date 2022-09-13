@@ -6,6 +6,14 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReviewFormModal from "../ReviewFormModal";
 
+export const closeReview = () => {
+    let reviewModal = document.getElementById("review-modal")
+    let modalBackground = document.getElementById("review-background-modal");
+    modalBackground.style.display = "none";
+    reviewModal.style.display = "none";
+
+}
+
 const ReviewIndexPage = () => {
     const {productId} = useParams();
     console.log("oroduct id", {productId})
@@ -16,7 +24,6 @@ const ReviewIndexPage = () => {
         dispatch(fetchReviews(productId))
     }, [productId])
 
-    // console.log("reviews", reviews)
 
     const mapReviews = () => {
         if (reviews.length === 0) {
@@ -28,21 +35,34 @@ const ReviewIndexPage = () => {
         }
     }
 
-    const handleReviews = () => {
-        const reviewButton = document.getElementsById("review-form");
-        reviewButton.style.display = "block";
+    window.onclick = function(e) {
+        let reviewModal = document.getElementById("review-modal")
+        let modalBackground = document.getElementById("review-background-modal");
+        if (e.target == modalBackground) {
+            modalBackground.style.display = "none";
+            reviewModal.style.display = "none";
+        }
     }
+
+    const openReviews = (e) => {
+        e.preventDefault();
+        let reviewModal = document.getElementById("review-modal");
+        console.log("review Modal", reviewModal)
+        reviewModal.style.display = "flex";
+        let modalBackground = document.getElementById("review-background-modal");
+        modalBackground.style.display = "block";
+        console.log("background", modalBackground)
+    }
+
     return (
         <>
+            <div id="review-background-modal" className="background-modal"></div>
             <div className="reviews-mapped">
-                <div>hello world</div>
                 {mapReviews()}
             </div>
-            <div onClick={handleReviews}>
-            Write a Review</div>
-            <div id="review-form">
-                <ReviewFormModal/>
-            </div>
+            <button onClick={openReviews}>
+            Write a Review</button>
+            <ReviewFormModal/>
         </>
     )
 }

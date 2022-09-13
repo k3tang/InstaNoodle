@@ -56,7 +56,7 @@ const Cart = () => {
 
     return (
         <>
-        <div id='modal-background'></div>
+        <div id='cart-modal-background' className='background-modal'></div>
         <div id="cart-index">
                 <div id="close-cart" className="fa-solid fa-x" onClick={closeSidebar}></div>
                 <h1 id="cart-header">Cart Items</h1>
