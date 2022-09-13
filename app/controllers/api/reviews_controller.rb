@@ -1,15 +1,15 @@
 class Api::ReviewsController < ApplicationController
+    before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index 
-        user_id = current_user[:id]
-        @reviews = Review.where(user_id: user_id)
-        render 'api/review/index'
+        @reviews = Review.where(product_id: params[:product_id])
+        render 'api/reviews/index'
     end 
 
     def create
         @review = Review.new(review_params)
-        if @review.save 
-            render 'api/review/show'
+        if @review.save
+            render 'api/reviews/show'
         else 
             render json: {errors: ["Unable to create review"]}, status: 422
         end 
@@ -18,7 +18,7 @@ class Api::ReviewsController < ApplicationController
     def update 
         @review = Review.find(params[:id])
         if @review.update(review_params)
-            render 'api/review/show'
+            render 'api/reviews/show'
         else 
             render json: {errors: ["Unable to update review"]}, status: 422
         end 
@@ -32,12 +32,11 @@ class Api::ReviewsController < ApplicationController
     end 
 
     private 
-
     def review_params
         params.require(:review).permit(
-            :review,
             :user_id,
             :product_id,
-            :rating)
+            :rating,
+            :body)
     end 
 end

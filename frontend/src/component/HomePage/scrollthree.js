@@ -32,8 +32,6 @@ const ScrollThree = () => {
                         <div className="soup-img-wrapper">
                             <video onMouseOver={(e) => e.target.play()} onClick={() =>   {
                                 container.current.style.backgroundColor = "#feb8af"
-                                console.log(container, "hello")
-                                // console.log(soupWrapper,"hello")
                             }} 
                             className="soup-video" src={kimchiVideo} alt="kimchi-soup-video"/>
                         </div>

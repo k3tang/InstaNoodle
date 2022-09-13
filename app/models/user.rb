@@ -7,8 +7,11 @@ class User < ApplicationRecord
   validates :name, format: {without: URI::MailTo::EMAIL_REGEXP}
   validates :password, length: {in: 6..255}, allow_nil: true
 
+  has_many :reviews
+
     before_validation :ensure_session_token
 
+  
     # has_many :cart_items,
     #   dependent: destroy
 

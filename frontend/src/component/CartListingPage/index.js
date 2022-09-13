@@ -34,7 +34,6 @@ const CartListing = ({cartItem}) => {
 
     const handleInput = () => {
         let input = parseInt(document.getElementById("cart-input").value);
-        console.log(input)
         if (input > 0) {
             setCount(input)
         } else {
