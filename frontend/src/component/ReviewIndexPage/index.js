@@ -15,12 +15,7 @@ export const closeReview = () => {
 
 }
 
-export const openReviews = () => {
-    let reviewModal = document.getElementById("review-modal-container");
-    reviewModal.style.display = "flex";
-    let modalBackground = document.getElementById("review-bg-modal");
-    modalBackground.style.display = "block";
-}
+
 
 
 const ReviewIndexPage = () => {
@@ -28,22 +23,32 @@ const ReviewIndexPage = () => {
     const reviews = useSelector(getReviews);
     const dispatch = useDispatch();
     const [selectedReview, setSelectedReview] = useState(null);
-
+    const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(fetchReviews(productId))
     }, [productId])
-
+    
+    const openReviews = () => {
+        let reviewModal = document.getElementById("review-modal-container");
+        reviewModal.style.display = "flex";
+        let modalBackground = document.getElementById("review-bg-modal");
+        modalBackground.style.display = "block";
+    }
 
     const mapReviews = () => {
         if (reviews.length === 0) {
             return "No reviews yet."
         } else {
             return reviews.map(review => (
-                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} />
-            ))
+                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReviews ={openReviews}/>
+                ))
+            }
         }
-    }
-
+        
+        const writeReview = () => {
+            setSelectedReview(null)
+            openReviews()
+        }
 
     return (
         <>
@@ -51,13 +56,13 @@ const ReviewIndexPage = () => {
                 <h1 className="review-index-header">The Reviews are in</h1>
                 <h2 className="review-index-average">Average Review placeholder</h2>
             </div>
-                <div onClick={openReviews}>Write a Review</div>
+                {user ? <div onClick={writeReview}>Write a Review</div> : ""}
                 <div id="review-bg-modal" onClick={closeReview}></div>
                 <div className="reviews-mapped">
                     {mapReviews()}
                 </div>
                 <div id="review-modal-container">
-                    <ReviewFormModal reviews={reviews} selectedReview={selectedReview}/>
+                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
                 </div>
         </>
     )
@@ -65,5 +70,3 @@ const ReviewIndexPage = () => {
 
 export default ReviewIndexPage;
 
-// every listing on an onclick on edit review, will setSelectedReview to review.id
-// review form modal => match reviews to setselectedreview id

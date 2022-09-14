@@ -7,6 +7,7 @@ import { fetchProducts } from '../../store/products';
 import { closeSidebar } from '../Navigation';
 import { useHistory } from 'react-router-dom';
 import cartoon from "../../assets/login-image.jpg";
+import { useState } from 'react';
 
 
 
@@ -15,6 +16,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
     const history = useHistory();
+    const [subamount, setSubamount] = useState(0)
 
     useEffect(() => {
         dispatch(fetchCartItems())
@@ -31,18 +33,19 @@ const Cart = () => {
             return "Your cart is empty"
         } else {
             return cartItems.map(cartItem => (
-                <CartListing key={cartItem.id} cartItem={cartItem} />
+                <CartListing key={cartItem.id} cartItem={cartItem} setSubamount={setSubamount} />
             ))}
     }
 
+
     const subtotal = () => {
-       return cartItems.reduce((acc, ele) => acc + (ele.quantity * ele.price), 0)
+       return cartItems.reduce((acc, ele) => acc + (ele.quantity * ele.price), 0);
     }
-    console.log("subtotal", subtotal())
+
 
     const deleteCart = () => {
         return cartItems.map(cartItem => (
-            dispatch(deleteCartItem( cartItem))
+            dispatch(deleteCartItem(cartItem))
         ))
     }
 
@@ -74,9 +77,9 @@ const Cart = () => {
 
                 {(user && cartItems.length > 0) ? 
                 <>
-                    <div id="shipping-text">Free shipping worldwide on orders over $75</div>
+                    <div id="shipping-text">Free US shipping on orders over $75</div>
                     <label id="cart-subtotal-label">Subtotal:
-                        <div id="cart-subtotal">${subtotal()}</div>
+                            <div id="cart-subtotal">${(Math.round((subtotal()) * 100) / 100).toFixed(2)}</div>
                     </label>
                     <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
                 </> : null}

@@ -44,9 +44,6 @@ function App() {
             <Route exact path="/products/:productId">
               <ProductShow />
             </Route>
-            <Route exact path="/cart">
-              <CartIndexPage />
-            </Route>
             <Redirect to="/"></Redirect>
           </Switch>
         </div>

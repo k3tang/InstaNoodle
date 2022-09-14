@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom'
 
 
 
-const CartListing = ({cartItem}) => {
+const CartListing = ({cartItem, setSubamount}) => {
     const {quantity, productId, id} = cartItem;
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
@@ -34,8 +34,8 @@ const CartListing = ({cartItem}) => {
     }
 
 
-    const handleInput = () => {
-        let input = parseInt(document.getElementById("cart-input").value);
+    const handleInput = (e) => {
+        let input = parseInt(e.target.value);
         if (input > 0) {
             setCount(input)
         } else {
@@ -55,6 +55,9 @@ const CartListing = ({cartItem}) => {
         }
         return dispatch(updateCartItem(upCartItem))
     }
+
+    setSubamount((count * price))
+    
 
     return (
         <>

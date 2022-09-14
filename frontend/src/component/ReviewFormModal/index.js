@@ -1,37 +1,45 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { createReview } from "../../store/reviews";
+import { createReview, updateReview } from "../../store/reviews";
 import "./index.css"
 import { closeReview } from "../ReviewIndexPage";
 import { useEffect } from "react";
 
-const ReviewFormModal = ({selectedReview}) => {
-    // console.log("selectedReview", selectedReview)
+const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
+    console.log("selectedReview", selectedReview)
     const {productId} = useParams();
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
-    const [rating, setRating] = useState("");
-    const [hover, setHover] = useState(0);
-    const [body, setBody] = useState("");
     const [errors, setErrors] = useState([]);
 
-    if (!selectedReview) {
-        selectedReview = {
-            title: "",
-            body: "",
-            rating: 0
-        }
+    let editedReview = selectedReview ? true : false;
+    let review;
+    if (editedReview) {
+        review = { ...selectedReview };
+    } else {
+        review = { rating: 0, title: "", body: "" };
+        console.log(review, "I am inside the conditional")
     }
-    const [title, setTitle] = useState("");
+    console.log(selectedReview, "selected review")
 
+    const [rating, setRating] = useState(review.rating);
+    const [hover, setHover] = useState(null);
+    const [title, setTitle] = useState(review.title);
+    const [body, setBody] = useState(review.body);
+    
     useEffect(() => {
-        setTitle(selectedReview.title)
+        setTitle(review.title);
+        setRating(review.rating);
+        setBody(review.body);
+        setHover(review.hover)
     }, [selectedReview])
 
+    
     const handleSubmit = () => {
-        const testReview = {
+        const newReview = {
             review: {
+                ...review,
                 userId: user.id,
                 productId: productId,
                 rating: rating,
@@ -39,7 +47,12 @@ const ReviewFormModal = ({selectedReview}) => {
                 title: title
             }
         }
-        dispatch(createReview(testReview))
+
+        if (editedReview) {
+            dispatch(updateReview(newReview))
+
+        } else {
+        dispatch(createReview(newReview))
             .catch(async(res) => {
                 let data;
                 try {
@@ -51,8 +64,14 @@ const ReviewFormModal = ({selectedReview}) => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             })
+        } 
         closeReview();
-
+            setBody("");
+            setErrors([]);
+            setTitle("");
+            setRating(0);
+            setHover(0);
+            setSelectedReview(null)
     }
 
 
@@ -74,14 +93,6 @@ const ReviewFormModal = ({selectedReview}) => {
             )
         })
     }
-
-    // const getTitle = () => {
-    //     if (currentReview) {
-    //         return currentReview.title;
-    //     } else {
-    //         return "";
-    //     }
-    // }
 
 
     return (

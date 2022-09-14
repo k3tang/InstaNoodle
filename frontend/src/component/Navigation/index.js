@@ -42,7 +42,7 @@ function Navigation() {
         dispatch(fetchCartItems());
         dispatch(fetchProducts());
 
-    }, [cartItems.length, sessionUser.id])
+    }, [cartItems.length])
 
     const color = () =>{
         if (location.pathname === "/"){

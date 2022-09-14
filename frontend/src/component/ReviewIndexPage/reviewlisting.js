@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteReview, updateReview } from "../../store/reviews";
+import { deleteReview, fetchReviews, updateReview } from "../../store/reviews";
 import "./index.css"
-import { openReviews } from ".";
+// import { openReviews } from ".";
 import ReviewFormModal from "../ReviewFormModal";
+import { useHistory, useParams } from "react-router-dom";
 
-const ReviewListing = ({review, setSelectedReview}) => {
+const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
     const {body, rating, name, userId, id} = review;
     const dispatch = useDispatch();
-    const sessionUserId = useSelector(state => state.session.user.id)
+    const { productId } = useParams();
+    const sessionUser = useSelector(state => state.session.user);
 
-    // setSelectedReview(review)
 
     const starRate = () => {
         return [...Array(5)].map((star, idx) => {
@@ -28,17 +29,20 @@ const ReviewListing = ({review, setSelectedReview}) => {
         })
     }
 
-    const changeReview = () => {
-        openReviews();
+    function handleDelete() {
+        return dispatch(deleteReview(id));
     }
+ 
 
     const editReview = () => {
-        if (userId === sessionUserId) {
+        if (!sessionUser) {
+            return null
+        } else if (userId === sessionUser.id) {
             setSelectedReview(review)
             return (
             <>
-                <div className="fa-solid fa-trash" id="review-trash" onClick={() => dispatch(deleteReview(id))}></div>
-                <div className="fa-solid fa-pencil" id="review-pencil" onClick={changeReview}></div>
+                <div className="fa-solid fa-trash" id="review-trash" onClick={handleDelete}></div>
+                <div className="fa-solid fa-pencil" id="review-pencil" onClick={openReviews}></div>
             </>
         )}
     }

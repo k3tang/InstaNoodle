@@ -80,11 +80,11 @@ export const updateCartItem = (cartData) => async dispatch => {
     dispatch(receiveItem(cartItem))
 }
 
-export const deleteCartItem = (cartItem) => async dispatch => {
-    const res = await csrfFetch(`/api/cart_items/${cartItem.id}`, {
+export const deleteCartItem = (cartItemId) => async dispatch => {
+    const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
         method: 'DELETE'
     })
-    dispatch(removeItem(cartItem.productId))
+    dispatch(removeItem(cartItemId))
 }
 
 // reducer - populates the view 
