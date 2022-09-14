@@ -11,7 +11,7 @@ const CartListing = ({cartItem}) => {
     const {quantity, productId, id} = cartItem;
     const dispatch = useDispatch();
     const product = useSelector(getProduct(cartItem.productId));
-    const user = sessionStorage.getItem('currentUser');
+    const user = useSelector(state => state.session.user)
     const [count, setCount] = useState(quantity);
     const [deleted, setDeleted] = useState(false);
     const history = useHistory();
@@ -44,7 +44,7 @@ const CartListing = ({cartItem}) => {
     }
 
     const handleUpdate = () => {
-        const userId = JSON.parse(user).id;
+        const userId = user.id;
         const upCartItem = {
             cartItem: {
                 id: id,
@@ -75,7 +75,7 @@ const CartListing = ({cartItem}) => {
                         <input type="text" id="cart-input" 
                         placeholder={quantity} 
                         onChange={handleInput}></input>
-                        <button className='cart-update' id="cart-button" onClick={handleUpdate}>Update Item</button>
+                        <button className='cart-update' id="cart-button" onClick={handleUpdate}>Update Amount</button>
                     </div>
                 </div>
             </div>

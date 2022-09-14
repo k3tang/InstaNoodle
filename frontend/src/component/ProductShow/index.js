@@ -11,7 +11,7 @@ import { fetchReviews } from '../../store/reviews';
 const ProductShow = () => {
     const {productId} = useParams();
     const dispatch = useDispatch();
-    const user = sessionStorage.getItem('currentUser')
+    const user = useSelector(state => state.session.user)
     const product = useSelector(getProduct(productId));
     const item = useSelector(getCartItem(productId))
     const [count, setCount] = useState(1);
@@ -45,7 +45,7 @@ const ProductShow = () => {
     const handleAddCart = (e) => {
         e.preventDefault();
         if (!user) return history.push("/signup");
-        const userId = JSON.parse(user).id;
+        const userId = user.id;
 
         openSidebar();
         if (!item ) {
@@ -94,7 +94,6 @@ const ProductShow = () => {
             </div>    
         </div>
         <div className='reviews-container'>
-            <div>hi hi</div>
             <ReviewIndexPage props={productId} />
         </div>
         </>

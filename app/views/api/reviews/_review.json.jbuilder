@@ -5,4 +5,5 @@ json.extract! review,
     :product_id,
     :rating,
     :title
-    
+
+

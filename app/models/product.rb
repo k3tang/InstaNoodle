@@ -3,7 +3,7 @@ class Product < ApplicationRecord
     has_one_attached :photo
 
     has_many( 
-    :carts,
+    :cart_items,
     foreign_key: :product_id,
     class_name: 'CartItem',
     dependent: :destroy
@@ -11,10 +11,10 @@ class Product < ApplicationRecord
 
     has_many :reviews
 
-#   def average_rating
-#     average = reviews.average(:rating)
-#     return average
-#     # average && average.round(1)
-#   end
+  def average_rating
+    average = reviews.average(:rating)
+    return average
+    average && average.round(1)
+  end
 
 end

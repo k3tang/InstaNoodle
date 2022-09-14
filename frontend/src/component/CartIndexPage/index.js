@@ -13,7 +13,7 @@ import cartoon from "../../assets/login-image.jpg";
 const Cart = () => {
     const cartItems = useSelector(getCartItems);
     const dispatch = useDispatch();
-    const user = sessionStorage.getItem("currentUser");
+    const user = useSelector(state => state.session.user)
     const history = useHistory();
 
     useEffect(() => {
@@ -34,6 +34,11 @@ const Cart = () => {
                 <CartListing key={cartItem.id} cartItem={cartItem} />
             ))}
     }
+
+    const subtotal = () => {
+       return cartItems.reduce((acc, ele) => acc + (ele.quantity * ele.price), 0)
+    }
+    console.log("subtotal", subtotal())
 
     const deleteCart = () => {
         return cartItems.map(cartItem => (
@@ -60,7 +65,6 @@ const Cart = () => {
         <div id="cart-index">
                 <div id="close-cart" className="fa-solid fa-x" onClick={closeSidebar}></div>
                 <h1 id="cart-header">Cart Items</h1>
-                {(user && cartItems.length > 0) ? <button id="checkout-button" onClick={handleCheckout}>Checkout</button> : null}
                 {user ? 
                 <div id="cart-listings">{mapCartItems()}</div> : 
                 <>
@@ -68,6 +72,14 @@ const Cart = () => {
                     <button id="cart-login" onClick={handleLogin}>Login to cart</button>
                 </>}
 
+                {(user && cartItems.length > 0) ? 
+                <>
+                    <div id="shipping-text">Free shipping worldwide on orders over $75</div>
+                    <label id="cart-subtotal-label">Subtotal:
+                        <div id="cart-subtotal">${subtotal()}</div>
+                    </label>
+                    <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
+                </> : null}
         </div>
         </>
     )

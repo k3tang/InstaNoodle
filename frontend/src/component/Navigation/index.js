@@ -33,7 +33,7 @@ window.onclick = function (event) {
 }
 
 function Navigation() {
-    const sessionUser = sessionStorage.getItem("currentUser")
+    const sessionUser = useSelector(state => state.session.user)
     const cartItems = useSelector(getCartItems);
     const dispatch = useDispatch();
     const location = useLocation();
@@ -42,7 +42,7 @@ function Navigation() {
         dispatch(fetchCartItems());
         dispatch(fetchProducts());
 
-    }, [cartItems.length, sessionUser])
+    }, [cartItems.length, sessionUser.id])
 
     const color = () =>{
         if (location.pathname === "/"){

@@ -1,31 +1,45 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReview } from "../../store/reviews";
 import "./index.css"
+import { closeReview } from "../ReviewIndexPage";
+import { useEffect } from "react";
 
-const ReviewFormModal = () => {
+const ReviewFormModal = ({selectedReview}) => {
+    // console.log("selectedReview", selectedReview)
     const {productId} = useParams();
-    const user = sessionStorage.getItem("currentUser");
+    const user = useSelector(state => state.session.user)
+    const dispatch = useDispatch();
     const [rating, setRating] = useState("");
     const [hover, setHover] = useState(0);
     const [body, setBody] = useState("");
-    const [title, setTitle] = useState("");
     const [errors, setErrors] = useState([]);
-    const dispatch = useDispatch();
 
+    if (!selectedReview) {
+        selectedReview = {
+            title: "",
+            body: "",
+            rating: 0
+        }
+    }
+    const [title, setTitle] = useState("");
+
+    useEffect(() => {
+        setTitle(selectedReview.title)
+    }, [selectedReview])
 
     const handleSubmit = () => {
-        const review = {
+        const testReview = {
             review: {
-                userId: JSON.parse(user).id,
+                userId: user.id,
                 productId: productId,
                 rating: rating,
                 body: body,
                 title: title
             }
         }
-        dispatch(createReview(review))
+        dispatch(createReview(testReview))
             .catch(async(res) => {
                 let data;
                 try {
@@ -37,11 +51,8 @@ const ReviewFormModal = () => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             })
+        closeReview();
 
-        setRating(0);
-        setHover(0);
-        setBody("");
-        setTitle("");
     }
 
 
@@ -64,11 +75,19 @@ const ReviewFormModal = () => {
         })
     }
 
+    // const getTitle = () => {
+    //     if (currentReview) {
+    //         return currentReview.title;
+    //     } else {
+    //         return "";
+    //     }
+    // }
+
 
     return (
         <>
-        <div id="review-modal-background"></div>
         <div id="review-modal">
+            <div id="review-x" className="fa-solid fa-x" onClick={closeReview}></div>
             <ul id="review-errors">
                 {errors.map((error) =>
                     <li key={error}>{error}</li>)}

@@ -6,7 +6,7 @@
     color: gray
 }
 
-#review-modal-background {
+/* #review-modal-background {
     display: none;
     position: fixed;
     left: 0;
@@ -20,14 +20,17 @@
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s;
-}
+} */
 
-#review-modal {
-    background-color: aqua;
+#review-modal-container {
     display: none;
     position: fixed;
     top: 25%;
     left: 25%;
+}
+#review-modal {
+    background-color: aqua;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -44,6 +47,10 @@
     flex-direction: row;
 }
 
+#review-x {
+    display: block;
+    margin-left: 40vw;
+}
 #star-buttons {
     display: flex;
     flex-direction: row;
