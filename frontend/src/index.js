@@ -10,7 +10,10 @@ import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import * as productActions from "./store/products";
 import * as cartActions from "./store/cart";
-import * as reviewActions from "./store/reviews"
+import * as reviewActions from "./store/reviews";
+import './fonts/TSTAR PRO W00 Regular.ttf'
+import './fonts/TSTAR W00 Bold.ttf'
+import './fonts/HWT Artz W00 Regular.ttf'
 
 const store = configureStore();
   if (process.env.NODE_ENV !== 'production') {

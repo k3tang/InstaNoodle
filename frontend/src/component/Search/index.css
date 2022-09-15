@@ -8,24 +8,16 @@
     height: 2vh;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    /* overflow-y: flow-root; */
+    margin-right: 1vw;
+    text-align: center;
  }
 
-.suggestions {
-    height: 0vh;
-    font-size: 2vh;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    /* z-index: 200; */
+#search-icon {
+    padding-right: 0.75vw;
 }
 
-.suggestions li {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 1vh;
-    padding: 1vh;
-}
-
-.suggestion-active {
-    background-color: aqua;
+@media all and (max-width: 1200px) {
+    #search-input, #search-icon {
+        display: none;
+    }
 }

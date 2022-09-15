@@ -22,18 +22,15 @@ const SearchBar = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <input
-                id="search-input"
-                placeholder="Search products"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                autoFocus="autofocus"></input>
-             
-            <div className="search-component">
-                <button type="submit" className="fa-solid fa-magnifying-glass" id="search-icon"></button>
+            <div className="search-form">
+                <input
+                    id="search-input"
+                    placeholder="Search products"
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    autoFocus="autofocus"/>
+                <button type="submit" className="fa-solid fa-magnifying-glass" id="search-icon" onClick={handleSubmit}></button>
             </div>
-        </form>
         </>
     )
 }

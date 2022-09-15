@@ -7,8 +7,6 @@ import { useEffect } from 'react';
 import { getCartItems, fetchCartItems } from '../../store/cart';
 import { fetchProducts } from '../../store/products';
 import SearchBar from '../Search';
-// import AutoComplete from '../Search';
-// import { autoCompleteData } from '../Search/data';
 
 
 
@@ -44,7 +42,6 @@ function Navigation() {
     useEffect(() => {
         dispatch(fetchCartItems());
         dispatch(fetchProducts());
-
     }, [cartItems.length])
 
     const color = () =>{
@@ -81,23 +78,21 @@ function Navigation() {
                 <div id="about-link">
                     <NavLink exact to="/about">Our Story</NavLink>
                 </div>
-                {/* <div id="recipes-link">
-                    <NavLink exact to="/recipes">#Sprucedupnoodz</NavLink>
-                </div> */}
             </div>
             <div id="nav-icons">
                 <div className='cart-components'>
                     <SearchBar/>
+                </div>
                 <div id="account-link">
                     {sessionUser ?
                         <NavLink exact to="/account" className="fa-solid fa-user" user={sessionUser}></NavLink> : <NavLink exact to="/login" className="fa-solid fa-user"></NavLink>
                     }
-                </div>
-                  
+                  <div className='cart-icons'>
                     <div id="cart-link" onClick={openSidebar}
                         className="fa-solid fa-cart-shopping">
                     </div>
                     <div id="cart-number">{itemsNum()}</div>
+                  </div>
                 </div>
             </div>
         </div>

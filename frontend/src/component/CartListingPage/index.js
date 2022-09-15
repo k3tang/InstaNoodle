@@ -29,7 +29,7 @@ const CartListing = ({cartItem, setSubamount}) => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        dispatch(deleteCartItem(id));
+        dispatch(deleteCartItem(id, productId));
         setDeleted(true);
     }
 

@@ -8,6 +8,7 @@ import { closeSidebar } from '../Navigation';
 import { useHistory } from 'react-router-dom';
 import cartoon from "../../assets/login-image.jpg";
 import { useState } from 'react';
+import Checkout from './checkout';
 
 
 
@@ -45,7 +46,7 @@ const Cart = () => {
 
     const deleteCart = () => {
         return cartItems.map(cartItem => (
-            dispatch(deleteCartItem(cartItem))
+            dispatch(deleteCartItem(cartItem.id, cartItem.productId))
         ))
     }
 
