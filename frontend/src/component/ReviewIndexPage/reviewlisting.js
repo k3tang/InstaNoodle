@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteReview} from "../../store/reviews";
 import "./index.css"
 
-const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
+const ReviewListing = ({review, setSelectedReview, openReview}) => {
     const {body, rating, name, userId, id, title} = review;
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
@@ -36,7 +36,7 @@ const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
             setSelectedReview(review)
             return (
             <>
-                <div className="fa-solid fa-pencil" id="review-pencil" onClick={openReviews}></div>
+                <div className="fa-solid fa-pencil" id="review-pencil" onClick={openReview}></div>
                 <div className="fa-solid fa-trash" id="review-trash" onClick={handleDelete}></div>
             </>
         )}

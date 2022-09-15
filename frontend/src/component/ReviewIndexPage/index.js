@@ -15,37 +15,37 @@ export const closeReview = () => {
 
 }
 
+export const openReview = () => {
+    let reviewModal = document.getElementById("review-modal-container");
+    reviewModal.style.display = "flex";
+    let modalBackground = document.getElementById("review-bg-modal");
+    modalBackground.style.display = "block";
+}
+
 const ReviewIndexPage = () => {
     const {productId} = useParams();
     const reviews = useSelector(getReviews);
     const dispatch = useDispatch();
     const [selectedReview, setSelectedReview] = useState(null);
-    const [errors, setErrors] = useState([])
     const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(fetchReviews(productId))
     }, [productId])
-    
-    const openReviews = () => {
-        let reviewModal = document.getElementById("review-modal-container");
-        reviewModal.style.display = "flex";
-        let modalBackground = document.getElementById("review-bg-modal");
-        modalBackground.style.display = "block";
-    }
+
 
     const mapReviews = () => {
         if (reviews.length === 0) {
             return "Oh no, there are no reviews yet..."
         } else {
             return reviews.map(review => (
-                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReviews ={openReviews} />
+                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReview ={openReview} />
                 ))
             }
         }
         
         const writeReview = () => {
             setSelectedReview(null)
-            openReviews()
+            openReview()
         }
 
     return (
@@ -63,7 +63,7 @@ const ReviewIndexPage = () => {
                     {mapReviews()}
                 </div>
                 <div id="review-modal-container">
-                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview} errors={errors} setErrors={setErrors}/>
+                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
                 </div>
             </div>
         </>

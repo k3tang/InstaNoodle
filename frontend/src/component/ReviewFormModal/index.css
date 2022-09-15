@@ -26,7 +26,7 @@
     text-transform: uppercase;
     width: 60vw;
     height: 65vh;
-    z-index: 2;
+    z-index: 3;
 }
 
 #review-rating > label {

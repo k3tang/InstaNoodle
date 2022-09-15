@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReview, updateReview } from "../../store/reviews";
 import "./index.css"
-import { closeReview } from "../ReviewIndexPage";
+import { closeReview, openReview } from "../ReviewIndexPage";
 import { useEffect } from "react";
+
 
 const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
     console.log("selectedReview", selectedReview)
     const {productId} = useParams();
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState([])
 
     let editedReview = selectedReview ? true : false;
     let review;
@@ -19,9 +20,7 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
         review = { ...selectedReview };
     } else {
         review = { rating: 0, title: "", body: "" };
-        console.log(review, "I am inside the conditional")
     }
-    console.log(selectedReview, "selected review")
 
     const [rating, setRating] = useState(review.rating);
     const [hover, setHover] = useState(null);
@@ -35,8 +34,18 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
         setHover(review.hover)
     }, [selectedReview])
 
-    
+    const validate = () => {
+       const tempErrors = [];
+        if (!rating) {
+            tempErrors.push("Rating can't be blank")
+        } else if (!body) {
+            tempErrors.push("Body can't be blank")
+        }
+        setErrors(tempErrors);
+        return tempErrors
+    }
     const handleSubmit = () => {
+        const tempErrors = validate();
         const newReview = {
             review: {
                 ...review,
@@ -47,35 +56,27 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
                 title: title
             }
         }
+        console.log("errors1", errors)
+
+        if (tempErrors.length > 0) {
+            return;
+        }
 
         if (editedReview) {
             dispatch(updateReview(newReview))
-
         } else {
-        dispatch(createReview(newReview))
-            .catch(async(res) => {
-                let data;
-                try {
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text();
-                }
-                if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
-            })
+            dispatch(createReview(newReview))
         }
-        // if (!errors) {
-        //     return;
-        // } else {
-            closeReview();
-            setBody("");
-            setErrors([]);
-            setTitle("");
-            setRating(0);
-            setHover(0);
-            setSelectedReview(null)
-        // }
+
+        console.log("errors2", errors)
+
+        closeReview();
+        setBody("");
+        setErrors([]);
+        setTitle("");
+        setRating(0);
+        setHover(0);
+        setSelectedReview(null)
     }
 
 
@@ -118,7 +119,7 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
                         <input type="text" value={title} id="star-title-text" onChange={(e) => {setTitle(e.target.value)}}/>
                     </label>
                     <label id="review-body-label">Review:
-                        <textarea id="review-body" value={body} rows="4" cols="20" onChange={(e) => {setBody(e.target.value)}}/>
+                        <textarea id="review-body" value={body} rows="4" cols="20" onChange={(e) => {setBody(e.target.value)}} />
                     </label>
             </div> 
             <div id="review-button" onClick={handleSubmit}>Submit Review</div>           
