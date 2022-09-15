@@ -18,7 +18,7 @@ const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
                     value={ratingNum}
                     className={ratingNum <= rating ? "starOn" : "starOff"}
                     >
-                    <span className="star">&#9733;</span>
+                    <span className="fa-solid fa-star"></span>
                 </div>
             )
         })
@@ -36,8 +36,8 @@ const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
             setSelectedReview(review)
             return (
             <>
-                <div className="fa-solid fa-trash" id="review-trash" onClick={handleDelete}></div>
                 <div className="fa-solid fa-pencil" id="review-pencil" onClick={openReviews}></div>
+                <div className="fa-solid fa-trash" id="review-trash" onClick={handleDelete}></div>
             </>
         )}
     }
@@ -45,13 +45,17 @@ const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
     return (
         <>
             <div className="review-listing-container">
-                <div className="review-text">
+                <div className="review-listing-text">
                     <div className="review-title">{title}</div>
                     <div className="review-body">{body}</div>
-                    <div className="review-author">{name}</div> 
-                    <div className="review-rating">{starRate()}</div>
                 </div>
-                <div className="review-edit-delete">{editReview()}</div>
+                <div className="reviewer-content-container">
+                    <div className="reviewer-content">
+                        <div className="review-author">{name}</div> 
+                        <div className="review-rating">{starRate()}</div>
+                        <div className="review-edit-delete">{editReview()}</div>
+                    </div>
+                </div>
             </div>
         </>
     )
