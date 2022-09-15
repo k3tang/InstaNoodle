@@ -1,3 +1,31 @@
-.active {
+#search-input {
+    font-size: 2vh;
+    background-color: transparent;
+    border-radius: 2vh;
+    border: 1px solid black;
+    outline: none;
+    padding: 1vh;
+    height: 2vh;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    /* overflow-y: flow-root; */
+ }
+
+.suggestions {
+    height: 0vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    /* z-index: 200; */
+}
+
+.suggestions li {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1vh;
+    padding: 1vh;
+}
+
+.suggestion-active {
     background-color: aqua;
 }

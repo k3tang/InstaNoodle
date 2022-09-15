@@ -85,13 +85,14 @@ function Navigation() {
                 </div>
             </div>
             <div id="nav-icons">
+                <div className='cart-components'>
+                      <AutoComplete data={autoCompleteData} />
                 <div id="account-link">
                     {sessionUser ?
                         <NavLink exact to="/account" className="fa-solid fa-user" user={sessionUser}></NavLink> : <NavLink exact to="/login" className="fa-solid fa-user"></NavLink>
                     }
                 </div>
-                <div className='cart-components'>
-                    <AutoComplete data={autoCompleteData}/>
+                  
                     <div id="cart-link" onClick={openSidebar}
                         className="fa-solid fa-cart-shopping">
                     </div>

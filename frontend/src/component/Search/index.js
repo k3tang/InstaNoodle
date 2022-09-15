@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css"
 
 const AutoComplete = ({data}) => {
     const [suggestions, setSuggestions] = useState([]);
@@ -57,7 +58,7 @@ const AutoComplete = ({data}) => {
                 {suggestions.map((suggestion, idx) => {
                     return (
                         <li
-                            className={idx === suggestionIndex ? "active" : ""}
+                            className={idx === suggestionIndex ? "suggestion-active" : ""}
                             key={idx}
                             onClick={handleClick}
                         >
@@ -72,8 +73,9 @@ const AutoComplete = ({data}) => {
 
     return (
         <>
-            <div className="autocomplete">
+            <div className="search-bar">
                 <input type="text" 
+                id="search-input"
                 onChange={handleChange}
                 onClick={handleClick}
                 onKeyDown={handleKeyDown} />

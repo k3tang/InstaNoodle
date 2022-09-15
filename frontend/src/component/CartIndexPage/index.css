@@ -35,7 +35,6 @@
     width: 0.65vw;
     height: 2vh;
     padding-left: 0.5vw;
-    /* background-color: lightgray; */
 }
 
 #cart-index::-webkit-scrollbar-thumb {
@@ -76,14 +75,15 @@
     display: block;
     font-size: 2vw;
     text-transform: uppercase;
-    width: 100%;
-    background-color: #a8b89a;
+    width: 98%;
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
     margin-top: 3vh;
     margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    border: 2px solid black;
 }
 
 #cart-cartoon {
@@ -92,6 +92,23 @@
     margin-left: auto;
     margin-right: 2vw;
     margin-top: 3vh;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
 }
 
 #checkout-button {

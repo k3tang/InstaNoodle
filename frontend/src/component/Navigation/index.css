@@ -14,6 +14,7 @@ a:link {
     border-bottom: 1px solid black;
     padding-left: 2vw;
     padding-right: 2vw;
+    height: 10vh;
     
 }
 #nav-list {
@@ -55,8 +56,9 @@ a:link {
     font-size: 2vw;
 }
 
-#nav-icons > div {
-    padding-left: 1.5vw;
+#nav-icons div {
+    padding-left: 0.75vw;
+    /* padding-right: 1vw; */
 }
 
 .cart-components {
@@ -72,7 +74,7 @@ a:link {
 #cart-number {
     color: black;
     font-size: 1.8vw;
-    padding-left: 0.15vw;
+    /* padding-left: vw; */
 }
 
 #recipes-link {
@@ -88,7 +90,7 @@ a:link {
     background-color: #feb8af;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1200px) {
     #links-icons {
         border-bottom: 1px solid black;
     }
@@ -109,6 +111,10 @@ a:link {
     #nav-icons {
        font-size: 4.75vw;
       
+    }
+
+    #search-input {
+        display: none;
     }
 
 }

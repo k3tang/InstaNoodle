@@ -64,14 +64,18 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             })
-        } 
-        closeReview();
+        }
+        // if (!errors) {
+        //     return;
+        // } else {
+            closeReview();
             setBody("");
             setErrors([]);
             setTitle("");
             setRating(0);
             setHover(0);
             setSelectedReview(null)
+        // }
     }
 
 
@@ -88,7 +92,7 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
                     onMouseEnter={() => setHover(ratingNum)}
                     onMouseOut={() => setHover(rating)}
                     >
-                    <span className="star">&#9733;</span>
+                    <span className="fa-solid fa-star"></span>
                 </div>
             )
         })
@@ -99,6 +103,7 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
         <>
         <div id="review-modal">
             <div id="review-x" className="fa-solid fa-x" onClick={closeReview}></div>
+            <h1 id="review-modal-header">Write Your Review</h1>
             <ul id="review-errors">
                 {errors.map((error) =>
                     <li key={error}>{error}</li>)}

@@ -14,3 +14,51 @@
     animation-duration: 0.4s
 }
 
+.review-index-container {
+    display: block;
+    background-color: white;
+    height: 100vh;
+    font-size: 2vw;
+    text-transform: uppercase;
+    padding-left: 5vh;
+    padding-right: 5vh;
+
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vh;
+
+}
+.review-button-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+}
+
+.review-button {
+    align-content: center;
+    border: 2px solid black;
+    width: 25vw;
+    text-align: center;
+    padding: 1vw;
+}
+
+.review-index-header {
+    font-size: 4vw;
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+}
+
+.review-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.reviews-mapped {
+
+}

@@ -15,14 +15,12 @@ export const closeReview = () => {
 
 }
 
-
-
-
 const ReviewIndexPage = () => {
     const {productId} = useParams();
     const reviews = useSelector(getReviews);
     const dispatch = useDispatch();
     const [selectedReview, setSelectedReview] = useState(null);
+    const [errors, setErrors] = useState([])
     const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(fetchReviews(productId))
@@ -37,10 +35,10 @@ const ReviewIndexPage = () => {
 
     const mapReviews = () => {
         if (reviews.length === 0) {
-            return "No reviews yet."
+            return "Oh no, there are reviews yet..."
         } else {
             return reviews.map(review => (
-                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReviews ={openReviews}/>
+                <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReviews ={openReviews} />
                 ))
             }
         }
@@ -53,17 +51,21 @@ const ReviewIndexPage = () => {
     return (
         <>
             <div className="review-index-container">
-                <h1 className="review-index-header">The Reviews are in</h1>
-                <h2 className="review-index-average">Average Review placeholder</h2>
-            </div>
-                {user ? <div onClick={writeReview}>Write a Review</div> : ""}
-                <div id="review-bg-modal" onClick={closeReview}></div>
+                <div className="review-text">
+                    <h1 className="review-index-header">The Reviews are in</h1>
+                    <h2 className="review-index-average">Average Review placeholder</h2>
+                </div>
+                <div className="review-button-container">
+                    {user ? <div onClick={writeReview} className="review-button">Write a Review</div> : ""}
+                    <div id="review-bg-modal" onClick={closeReview}></div>
+                </div>
                 <div className="reviews-mapped">
                     {mapReviews()}
                 </div>
                 <div id="review-modal-container">
-                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
+                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview} errors={errors} setErrors={setErrors}/>
                 </div>
+            </div>
         </>
     )
 }

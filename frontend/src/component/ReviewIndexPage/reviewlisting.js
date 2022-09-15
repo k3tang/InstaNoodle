@@ -1,15 +1,10 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteReview, fetchReviews, updateReview } from "../../store/reviews";
+import { deleteReview} from "../../store/reviews";
 import "./index.css"
-// import { openReviews } from ".";
-import ReviewFormModal from "../ReviewFormModal";
-import { useHistory, useParams } from "react-router-dom";
 
 const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
-    const {body, rating, name, userId, id} = review;
+    const {body, rating, name, userId, id, title} = review;
     const dispatch = useDispatch();
-    const { productId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
 
 
@@ -49,12 +44,12 @@ const ReviewListing = ({review, setSelectedReview,  openReviews}) => {
 
     return (
         <>
-        <div>Reviews</div>
             <div className="review-listing-container">
-                <div className="review-author">{name}</div>
                 <div className="review-text">
-                    <div className="review-rating">{starRate()}</div>
+                    <div className="review-title">{title}</div>
                     <div className="review-body">{body}</div>
+                    <div className="review-author">{name}</div> 
+                    <div className="review-rating">{starRate()}</div>
                 </div>
                 <div className="review-edit-delete">{editReview()}</div>
             </div>
