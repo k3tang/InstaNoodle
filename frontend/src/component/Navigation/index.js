@@ -81,9 +81,9 @@ function Navigation() {
                 <div id="about-link">
                     <NavLink exact to="/about">Our Story</NavLink>
                 </div>
-                <div id="recipes-link">
+                {/* <div id="recipes-link">
                     <NavLink exact to="/recipes">#Sprucedupnoodz</NavLink>
-                </div>
+                </div> */}
             </div>
             <div id="nav-icons">
                 <div className='cart-components'>

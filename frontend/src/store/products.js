@@ -33,7 +33,7 @@ export const getProducts = state => {
     }
 }
 
-// thunk aciton creators
+// thunk action creators
 
 export const fetchProducts = () => async dispatch => {
     const res = await csrfFetch('/api/products')

@@ -10,10 +10,10 @@ class Api::ProductsController < ApplicationController
       end 
 
       def search 
-          @parameter = params[:search].downcase
-          @results = Product.where("lower(name) ILIKE ? OR desc ILIKE ?", "%#{@parameter}%", "%#{@parameter}%")
+          query = params[:query]
+          @products = Product.where('name ILIKE ?', "%#{query}%")
 
-        if @results.length > 0
+        if @products.length > 0
           render :index
         else 
           render :index
