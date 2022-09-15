@@ -35,7 +35,7 @@ const ReviewIndexPage = () => {
 
     const mapReviews = () => {
         if (reviews.length === 0) {
-            return "Oh no, there are reviews yet..."
+            return "Oh no, there are no reviews yet..."
         } else {
             return reviews.map(review => (
                 <ReviewListing key={review.id} review={review} setSelectedReview={setSelectedReview} selectedReview={selectedReview} openReviews ={openReviews} />

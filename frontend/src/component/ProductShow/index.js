@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { getCartItem, updateCartItem, createCartItem, fetchCartItems } from "../../store/cart";
 import { openSidebar } from "../Navigation"; import ReviewIndexPage from '../ReviewIndexPage';
 import { fetchReviews } from '../../store/reviews';
+import NoodleInfo from "./noodleinfo";
 
 const ProductShow = () => {
     const {productId} = useParams();
@@ -96,6 +97,7 @@ const ProductShow = () => {
         <div className='reviews-container'>
             <ReviewIndexPage props={productId} />
         </div>
+        {productId > 6 ? "" : <NoodleInfo /> }
         </>
     )
 }

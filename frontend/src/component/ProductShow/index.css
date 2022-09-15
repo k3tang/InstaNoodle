@@ -147,3 +147,139 @@
     }
 
 }
+
+
+/* noodle-headlines css  */
+
+.noodle-headlines {
+    background-color: #feb8af;
+    text-transform: uppercase;
+    height: 95vh;
+}
+
+.headlines-header {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding-top: 5vh;
+    font-size: 1.5vw;
+    font-family: "T-Star Regular";
+    letter-spacing: 0.03em;
+}
+
+.headlines-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    font-size: 2.75vw;
+    letter-spacing: 0.05em;
+    width: 75vw;
+    margin: auto;
+}
+
+.headlines-grid img {
+    padding-right: 2vw;
+    width: 5vw;
+}
+
+.headlines-grid > li {
+    margin-bottom: 2vh;
+}
+
+/* noodle-chart */
+
+.noodle-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.noodle-chart-text {
+    width: 40vw;
+}
+
+.noodle-chart-title {
+    font-size: 5.8vw;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding-bottom: 2vh;
+}
+
+#noodle-chart-img {
+    padding-left: 4vw;
+}
+
+.noodle-chart-desc {
+    font-size: 1.35vw;
+    font-family: "T-Star Regular";
+    letter-spacing: 0.03em;
+    line-height: 4vh;
+}
+
+/* noodle-lifts */
+
+.noodle-lifts {
+    background-color: #ffe394;
+}
+
+.first-lift, .second-lift {
+    position: relative;
+    display: flex;
+    width: 100vw;
+}
+
+.first-lift img {
+    padding-top: 7vh;
+    width: 50vw;
+}
+
+.first-lift-text {
+    width: 43vw;
+}
+
+.first-lift-title {
+    font-size: 5.5vw;
+    letter-spacing: 0.02em;
+    padding-top: 40vh;
+    padding-bottom: 4vh;
+}
+
+.first-lift-desc, .second-lift-desc {
+    font-size: 1.35vw;
+    font-family: "T-Star Regular";
+    line-height: 4.25vh;
+    letter-spacing: 0.02em;
+}
+
+.second-lift img {
+    width: 45vw;
+    position: absolute;
+    right: 0;
+    bottom: 10vh;
+}
+
+.second-lift-text {
+    display: flex;
+    flex-direction: column;
+    width: 43vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+.second-lift-title {
+    font-size: 5.5vw;
+    letter-spacing: 0.02em;
+    padding-bottom: 4vh;
+}
+
+.vita-text {
+    font-size: 2.1vw;
+    letter-spacing: 0.02em;
+    line-height: 6vh;
+    width: 70vw;
+    margin-left: 6vw;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}

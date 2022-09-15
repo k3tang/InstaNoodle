@@ -13,6 +13,22 @@ import feature4 from "../../assets/feature-pics/feature4.png"
 import feature5 from "../../assets/feature-pics/feature5.png"
 import feature6 from "../../assets/feature-pics/feature6.png"
 
+export const noodlePath = () => {
+    return (
+        <div className="noodle-container">
+            <svg className="text-path" viewBox="0 -20 425 100">
+                <path id="curve" d="M0,0C76.72,0,76.72,49.11,153.43,49.11S230.15,0,306.87,0,383.58,49.11,460.3,49.11,537,0,613.74,0"></path>
+                <text x="-100">
+                    <textPath href="#curve" startOffset="50%">
+                        <animate attributeName="startOffset" values="-500;0" dur="13s" repeatCount="indefinite"></animate>
+                        Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~  Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+    )
+}
+
 const ScrollTwo = () => {
 
 function mapPress(){
@@ -37,17 +53,7 @@ function mapPress(){
                     </div>
                 </div>
             </div>
-            <div className="noodle-container">
-                <svg className="text-path" viewBox="0 -20 425 100">
-                    <path id="curve" d="M0,0C76.72,0,76.72,49.11,153.43,49.11S230.15,0,306.87,0,383.58,49.11,460.3,49.11,537,0,613.74,0"></path>
-                    <text x="-100">
-                        <textPath href="#curve" startOffset="50%">
-                            <animate attributeName="startOffset" values="-500;0" dur="13s" repeatCount="indefinite"></animate>
-                            Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~  Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~ Not a normal noodle ~
-                        </textPath>
-                    </text>
-                </svg>
-            </div>
+            {noodlePath()}
             <div className="grid-container">
                 <div className="pure-g">
                     <div className="pure-u-1-2 pure-u-md-1-3 pure-u-lg-1-6">
