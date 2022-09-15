@@ -6,8 +6,9 @@ import noodleIcon from "../../assets/ramen.png";
 import { useEffect } from 'react';
 import { getCartItems, fetchCartItems } from '../../store/cart';
 import { fetchProducts } from '../../store/products';
-import AutoComplete from '../Search';
-import { autoCompleteData } from '../Search/data';
+import SearchBar from '../Search';
+// import AutoComplete from '../Search';
+// import { autoCompleteData } from '../Search/data';
 
 
 
@@ -86,7 +87,7 @@ function Navigation() {
             </div>
             <div id="nav-icons">
                 <div className='cart-components'>
-                      <AutoComplete data={autoCompleteData} />
+                    <SearchBar/>
                 <div id="account-link">
                     {sessionUser ?
                         <NavLink exact to="/account" className="fa-solid fa-user" user={sessionUser}></NavLink> : <NavLink exact to="/login" className="fa-solid fa-user"></NavLink>

@@ -13,6 +13,8 @@ export const setProduct = payload => ({
     payload
 })
 
+// selectors
+
 export const getProduct = productId => state => {
     if (!state) {
         return null
@@ -31,6 +33,8 @@ export const getProducts = state => {
     }
 }
 
+// thunk aciton creators
+
 export const fetchProducts = () => async dispatch => {
     const res = await csrfFetch('/api/products')
     const products = await res.json();
@@ -42,6 +46,19 @@ export const fetchProduct = (productId) => async dispatch => {
     const product = await res.json();
     dispatch(setProduct(product))
 }
+
+
+export const searchProducts = (query) => async dispatch => {
+    const res = await csrfFetch(`/api/products/search/${query}`)
+    if (res.status >= 400) throw res;
+
+    if (res.ok){
+        const data = await res.json();
+        dispatch(setProducts(data));
+    }
+}
+
+//reducer 
 
 function productsReducer(state = {}, action) {
     Object.freeze(state);
