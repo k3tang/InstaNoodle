@@ -6,6 +6,8 @@ import noodleIcon from "../../assets/ramen.png";
 import { useEffect } from 'react';
 import { getCartItems, fetchCartItems } from '../../store/cart';
 import { fetchProducts } from '../../store/products';
+import AutoComplete from '../Search';
+import { autoCompleteData } from '../Search/data';
 
 
 
@@ -89,6 +91,7 @@ function Navigation() {
                     }
                 </div>
                 <div className='cart-components'>
+                    <AutoComplete data={autoCompleteData}/>
                     <div id="cart-link" onClick={openSidebar}
                         className="fa-solid fa-cart-shopping">
                     </div>

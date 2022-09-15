@@ -56,7 +56,7 @@ ApplicationRecord.transaction do
 
 
   product3 = Product.create!({
-    name:"Spicy Kimchi",
+    name:"Spicy Kimchi Noodles",
     desc:"A mega-tasty, spicy kimchi soup that tickles your brain with whole wheat noodles that make for a satisfying hot slurp.",
     price: 5.00
   })
@@ -64,7 +64,7 @@ ApplicationRecord.transaction do
   product3.photo.attach(io: file3, filename: "spicy-kimchi.png")
 
     product4 = Product.create!({
-    name:"Yellow Curry",
+    name:"Yellow Curry Noodles",
     desc:"A satisfying, rich, turmeric and coconut soup with whole wheat noodles that give you a comforting, warm feeling in your belly.",
     price: 5.00
   })
@@ -73,7 +73,7 @@ ApplicationRecord.transaction do
 
 
      product5 = Product.create!({
-    name:"Smoky Mushroom & Miso",
+    name:"Smoky Mushroom & Miso Noodles",
     desc:"A real soul cleanser with smoky mushroom & miso and whole wheat noodles that nourish your soul with every slurp.",
     price: 5.00
   })
