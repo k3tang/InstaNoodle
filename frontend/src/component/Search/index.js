@@ -10,6 +10,7 @@ const SearchBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [query, setQuery] = useState("");
+    const [showModal, setShowModal]
 
     const handleClick = (e) => {
         e.preventDefault();
