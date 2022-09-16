@@ -144,3 +144,44 @@
 #cart-subtotal {
     margin-left: 2vw;
 }
+
+/* checkout-modal */
+
+
+#checkout-modal {
+    display: none;
+    position: fixed;
+    top: 25vh;
+    left: 30vw;
+    width: 40vw;
+    height: 20vw;
+    font-size: 2vw;
+    background-color: #feb8af;
+}
+
+#close-checkout-modal {
+    display: block;
+    position: absolute;
+    top: 2.5vh;
+    right: 2vw;
+    margin-left: 40vw;
+}
+
+#checkout-title {
+    font-size: 2.75vw;
+    padding-top: 10vh;
+    padding-bottom: 3vh;
+    letter-spacing: 0.05em;
+    margin: auto;
+    text-align: center;
+}
+
+#checkout-text {
+    display: block;
+    font-size: 1.5vw;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    text-align: justify;
+}

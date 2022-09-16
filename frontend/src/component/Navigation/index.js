@@ -27,9 +27,11 @@ export const openSidebar = () => {
 window.onclick = function (event) {
     let modal = document.getElementById("cart-index");
     let modalBackground = document.getElementById("cart-modal-background");
+    let ele = document.getElementById("checkout-modal");
     if (event.target == modalBackground) {
         modal.style.display = "none";
         modalBackground.style.display = "none";
+        ele.style.display = "none";
     }
 }
 

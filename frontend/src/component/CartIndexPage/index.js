@@ -67,7 +67,12 @@ const Cart = () => {
         let ele = document.getElementById("checkout-modal");
         console.log(ele, "ele")
         ele.style.display = "block";
+        let bg = document.getElementById("cart-modal-background");
+        bg.style.display = "block";
     }
+
+
+    
 
 
     return (
@@ -92,7 +97,7 @@ const Cart = () => {
                     <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
                 </> : null}
         </div>
-            <div id="checkout-modal"><Checkout /></div>
+            <div id="checkout-modal"><Checkout/></div>
         </>
     )
 }
