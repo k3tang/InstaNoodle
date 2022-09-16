@@ -4,10 +4,6 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import {openSidebar} from "../Navigation"
-import Checkout from "../CartIndexPage/checkout";
-
-
-
 
 function UserProfile() {
     const dispatch = useDispatch();

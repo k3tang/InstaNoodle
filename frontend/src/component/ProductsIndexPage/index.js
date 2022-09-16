@@ -22,7 +22,10 @@ const ProductsIndex = () => {
     
     return (
         <>
-            <h1 id="products-header">Instant Gratification</h1>
+            <div className="products-header-anim">
+                <div id="products-anim">Instant Gratification ~ Instant Gratification ~ Instant Gratification ~ Instant Gratification ~ Instant Gratification ~ Instant Gratification ~</div>
+            </div>
+                <h1 id='products-header'>All Products</h1>
             <div id="product-listings">
                 {mapProducts()}
             </div>
