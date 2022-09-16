@@ -4,7 +4,9 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import {openSidebar} from "../Navigation"
-import { fetchCartItems } from "../../store/cart";
+import Checkout from "../CartIndexPage/checkout";
+
+
 
 
 function UserProfile() {
@@ -12,12 +14,11 @@ function UserProfile() {
     const user = useSelector(state => state.session.user);
     
 
-  
-
     const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logout());
     };
+
 
 
     return !user ? (
@@ -30,6 +31,7 @@ function UserProfile() {
                     <button onClick={logout}>Logout</button>
                 </div>
             </div>
+         
             </>
         )
 }

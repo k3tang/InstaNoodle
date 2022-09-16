@@ -11,7 +11,6 @@ import { useState } from 'react';
 import Checkout from './checkout';
 
 
-
 const Cart = () => {
     const cartItems = useSelector(getCartItems);
     const dispatch = useDispatch();
@@ -60,8 +59,16 @@ const Cart = () => {
         e.preventDefault();
         deleteCart();
         closeSidebar();
+        handleCheckoutModal();
         history.push("/account");
     }
+
+  const handleCheckoutModal = () => {
+        let ele = document.getElementById("checkout-modal");
+        console.log(ele, "ele")
+        ele.style.display = "block";
+    }
+
 
     return (
         <>
@@ -85,6 +92,7 @@ const Cart = () => {
                     <button id="checkout-button" onClick={handleCheckout}>Checkout</button>
                 </> : null}
         </div>
+            <div id="checkout-modal"><Checkout /></div>
         </>
     )
 }
