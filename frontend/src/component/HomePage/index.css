@@ -309,3 +309,54 @@ svg.text-path {
     border-radius: 4vw;
     padding: 1vh;
 }
+
+/* review-slider */
+
+.reviews-swiper {
+    position: relative;
+    background-color: #f2bc7a;
+    height: 75vh;
+    text-transform: uppercase;
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+.review-desc {
+    font-size: 4.5vw;
+    letter-spacing: 0.04em;
+    text-align: center;
+    line-height: 9vh;
+    padding-bottom: 6vh;
+}
+
+.review-author {
+    font-size: 2vw;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-family: "T-Star Regular";
+}
+
+.swiper-pagination-bullet-active {
+    background-color: black !important;
+}
+
+.swiper-pagination-bullet {
+        transition: all .4s ease !important;
+        width: 1.5vw !important;
+        height: 1.5vw !important;
+        border: 3px solid #1d1e1c !important;
+        margin: 0.75vw !important;
+}
+
+#cartoon-hoodie {
+    position: absolute;
+    bottom: 2vh;
+    right: 14vw;
+    width: 9.5vw;
+}

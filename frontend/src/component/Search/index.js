@@ -4,33 +4,44 @@ import { searchProducts } from "../../store/products";
 import { useDispatch} from "react-redux";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import SearchModal from "./searchmodal";
 
 
 const SearchBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const [showModal, setShowModal]= useState(false);
     const [query, setQuery] = useState("");
+    const [showSearch, setShowSearch] = useState(false);
 
 
         const handleSubmit = (e) => {
             e.preventDefault();
             dispatch(searchProducts(query));
             history.push("/search");
+            setShowSearch(false);
+        }
+
+        const handleSearchBar = (e) => {
+            if (showSearch) {
+                setShowSearch(false)
+            } else {
+                setShowSearch(true)
+            }
         }
 
     return (
         <>
-            <div className="search-form">
+            {showSearch ? 
+            <form className="search-form" onSubmit={handleSubmit}>
                 <input
                     id="search-input"
                     placeholder="Search products"
                     value={query}
                     onChange={e => setQuery(e.target.value)}
                     autoFocus="autofocus"/>
-                <button type="submit" className="fa-solid fa-magnifying-glass" id="search-icon" onClick={handleSubmit}></button>
-            </div>
+            </form> : ""
+            }
+
+            <button type="submit" className="fa-solid fa-magnifying-glass" id="search-icon" onClick={handleSearchBar}></button>
         </>
     )
 }

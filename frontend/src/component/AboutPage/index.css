@@ -1,5 +1,86 @@
-#about-page {
+.about-page {
     background-color: #feb8af;
-    height: 100vh;
-    
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 4vh;
 }
+
+#karen-about-page {
+    background-color:#f2bc7b;
+}
+
+.about-page img {
+    object-fit: cover;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 3vh;
+    margin: 3vh;
+  
+}
+
+.carl-profile-text, .karen-profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2vw;
+}
+
+.profile-header {
+    font-size: 6vw;
+    letter-spacing: 0.02em;
+    padding-bottom: 4vh;
+    text-transform: uppercase;
+}
+
+.profile-desc {
+    font-size: 1.35vw;
+    font-family: "T-Star Regular";
+    line-height: 4.25vh;
+    letter-spacing: 0.02em;
+}
+
+.mission-state {
+    background-color: #ffe394;
+    height: 45vh;
+    position: relative;
+}
+
+#mission-title {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+    font-size: 1.5vw;
+    font-family: "T-Star Regular";
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+#mission-desc {
+    display: block;
+    font-size: 4vw;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    padding-bottom: 4vh;
+    text-transform: uppercase;
+}
+
+#mission-img {
+    position: absolute; 
+    bottom: 6vh;
+    right: 7vw;
+}
+
+
+
+
+
+

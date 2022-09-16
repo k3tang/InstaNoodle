@@ -10,7 +10,7 @@ import AboutPage from './component/AboutPage';
 import RecipesIndex from './component/RecipesIndex';
 import ProductShow from './component/ProductShow';
 import CartIndexPage from './component/CartIndexPage';
-import SearchModal from './component/Search/searchmodal';
+import SearchIndex from './component/Search/searchindex';
 
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
               <ProductShow />
             </Route>
             <Route exact path="/search">
-              <SearchModal/>
+              <SearchIndex />
             </Route>
             <Redirect to="/"></Redirect>
           </Switch>
