@@ -17,11 +17,11 @@
 .review-index-container {
     display: block;
     background-color: #d9e1b6;
-    height: 90vh;
     font-size: 1.5vw;
     text-transform: uppercase;
     padding-left: 5vh;
     padding-right: 5vh;
+    padding-bottom: 8vh;
 
 }
 

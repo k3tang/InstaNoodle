@@ -24,7 +24,7 @@ const AboutPage = () => {
         <div className="about-page" id="karen-about-page">
             <div className="karen-profile-text">
                 <h1 className="profile-header">All about the noodle bytes</h1>
-                    <div className="profile-desc">Thank you to the team at FutureNoodles for inspiring this website clone! This is Karen here, fellow instant noodle enthusiast, master water boiler and time keeper. I am a full-stack software engineer with experience in Javascript, React, Redux, Node, Ruby on Rails, and PostgresQL. I am interested in promoting web service accessibility through intuitive user interfaces. 
+                    <div className="profile-desc">Thank you to the team at <a href="https://www.futurenoodles.com">FutureNoodles</a> for inspiring this website clone! This is Karen here, fellow instant noodle enthusiast, master water boiler and time keeper. I am a full-stack software engineer with experience in Javascript, React, Redux, Node, Ruby on Rails, and PostgresQL. I am interested in promoting web service accessibility through intuitive user interfaces. 
                     <br></br>
                     <br></br>
                     As a nurse practitioner turned computer programmer, I am interested in the intersection of technology and health management and its potential to promote greater wellness in our communities.
