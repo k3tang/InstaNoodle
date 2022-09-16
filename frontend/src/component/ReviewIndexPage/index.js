@@ -53,7 +53,7 @@ const ReviewIndexPage = () => {
             <div className="review-index-container">
                 <div className="review-text">
                     <h1 className="review-index-header">The Reviews are in ...</h1>
-                    <h2 className="review-index-average">Average Review placeholder</h2>
+                    <h2 className="review-index-average"></h2>
                 </div>
                 <div className="review-button-container">
                     {user ? <div onClick={writeReview} className="review-button">Write a Review</div> : ""}
