@@ -1,11 +1,11 @@
 #profile-component {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-size: 3.25vw;
     margin-top: 8vh;
     text-transform: uppercase;
+    height: 90vh;
 }
 
 #profile-buttons {

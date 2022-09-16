@@ -33,7 +33,6 @@ a:link {
 #main-logo {  
     display: flex;
     justify-content: start;
-    /* padding-right: 30vw; */
     margin-right: auto;
    
 }
@@ -108,7 +107,8 @@ a:link {
 
     #nav-list > div {
         flex-wrap: wrap;
-        font-size: 3.5vw;
+        font-size: 3vw;
+        margin-right: 2vw;
     }
 
     #nav-icons {

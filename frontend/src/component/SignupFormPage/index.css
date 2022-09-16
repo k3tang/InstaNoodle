@@ -1,11 +1,11 @@
 #signup-component {
-    margin-top: 6%;
     position: relative;
     display: flex;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-items: center;
+    height: 90vh;
 }
 
 #signup-header {
@@ -69,7 +69,7 @@
     display: block;
     position: absolute;
     right: 10vw;
-    bottom: 7vh;
+    bottom: 10vh;
     width: 9vw;
 }
 
@@ -101,7 +101,6 @@
     }
 
     #signup-cartoon {
-        width: 15vw;
-        bottom: 2vh;
+        display: none;
     }
 }

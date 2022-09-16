@@ -11,6 +11,7 @@ import RecipesIndex from './component/RecipesIndex';
 import ProductShow from './component/ProductShow';
 import CartIndexPage from './component/CartIndexPage';
 import SearchIndex from './component/Search/searchindex';
+import Footer from './component/Footer';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             </Route>
             <Redirect to="/"></Redirect>
           </Switch>
+          <Footer/>
         </div>
       </div>
       </>

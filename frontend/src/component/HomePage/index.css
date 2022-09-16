@@ -315,7 +315,7 @@ svg.text-path {
 .reviews-swiper {
     position: relative;
     background-color: #f2bc7a;
-    height: 75vh;
+    height: 70vh;
     text-transform: uppercase;
 }
 
@@ -328,15 +328,15 @@ svg.text-path {
 }
 
 .review-desc {
-    font-size: 4.5vw;
-    letter-spacing: 0.04em;
+    font-size: 3.75vw;
+    letter-spacing: 0.03em;
     text-align: center;
-    line-height: 9vh;
+    line-height: 8.5vh;
     padding-bottom: 6vh;
 }
 
 .review-author {
-    font-size: 2vw;
+    font-size: 1.75vw;
     letter-spacing: 0.02em;
     text-align: center;
     font-family: "T-Star Regular";
@@ -352,11 +352,12 @@ svg.text-path {
         height: 1.5vw !important;
         border: 3px solid #1d1e1c !important;
         margin: 0.75vw !important;
+        margin-bottom: 4vh !important;
 }
 
 #cartoon-hoodie {
     position: absolute;
-    bottom: 2vh;
+    bottom: 4vh;
     right: 14vw;
-    width: 9.5vw;
+    width: 9vw;
 }

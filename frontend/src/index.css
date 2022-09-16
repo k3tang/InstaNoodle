@@ -14,3 +14,14 @@
     font-family: HWT Artz;
     src: url(../src/fonts/HWT\ Artz\ W00\ Regular.ttf);
 }
+
+#main-page {
+    min-height: 100vh;
+}
+
+.footer-outer-wrapper {
+    display: block;
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+}
