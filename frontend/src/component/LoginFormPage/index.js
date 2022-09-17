@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import './index.css';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import cartoon from "../../assets/login-image.jpg";
 import { fetchCartItems } from '../../store/cart';
+
 
 function LoginFormPage() {
     const dispatch = useDispatch();
@@ -13,10 +13,11 @@ function LoginFormPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
     if (sessionUser) {
         dispatch(fetchCartItems())
-        return <Redirect to='/account'/>;
+        return history.push("/products");
     }
 
     const handleSubmit = e => {

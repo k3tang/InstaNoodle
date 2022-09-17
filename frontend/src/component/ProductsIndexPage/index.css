@@ -15,8 +15,8 @@
  .products-header-anim {
    background-color: black;
    border-bottom: 1px solid black;
-   /* padding-top: 1vh; */
-   /* padding-bottom: 1vh; */
+   width: 100vw;
+   overflow: hidden;
  }
 
  #products-header {

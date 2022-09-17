@@ -45,10 +45,10 @@ const ProductShow = () => {
  
     const handleAddCart = (e) => {
         e.preventDefault();
-        if (!user) return history.push("/signup");
+        openSidebar();
         const userId = user.id;
 
-        openSidebar();
+       
         if (!item ) {
             const newItem = {
                 cartItem: {
