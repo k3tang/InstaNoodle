@@ -24,7 +24,7 @@ export const openSidebar = () => {
     modalBackground.style.display = "block";
 }
 
-window.onclick = function (event) {
+window.onclick = function(event) {
     let modal = document.getElementById("cart-index");
     let modalBackground = document.getElementById("cart-modal-background");
     let ele = document.getElementById("checkout-modal");
