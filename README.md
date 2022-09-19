@@ -1,5 +1,5 @@
 
-# InstaNoodle
+# InstaNoodles
 
 [Click here to view!](https://instanoodles.herokuapp.com)
 
