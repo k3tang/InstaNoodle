@@ -1,7 +1,7 @@
 
 # InstaNoodle
 
-[Click here for website](https://instanoodles.herokuapp.com)
+[Click here to view!](https://instanoodles.herokuapp.com)
 
 ## Background
 --- 
