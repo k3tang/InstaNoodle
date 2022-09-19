@@ -5,13 +5,13 @@
 
 ## Background
 --- 
-Instanoodles is a website clone of a UK-based vegan instant noodle company, [FutureNoodles](https://futurenoodles.com). The company uses a fun and modern asethetic in their brand marketing, redefining what instant noodles can be. Additionally, FutureNoodles is a socially conscious, environmentally-friendly product that promotes wellness in their consumers by providing a healthier alternative for those who eat in a hurry. 
+Instanoodles is a website clone of a UK-based vegan instant noodle company, [FutureNoodles](https://futurenoodles.com). The company uses a fun and modern aesthetic in their brand marketing, redefining what instant noodles can be. Additionally, FutureNoodles is a socially conscious, environmentally-friendly product that promotes wellness in their consumers by providing a healthier alternative for those who eat in a hurry. 
 
 ## Features 
 ---
 ### User Authentication - Login/Signup 
 
-InstaNoodles features a fully functional user authentication system, complete with a demo user login and error handling for imcomplete entries. The user will be automatically redirected to the login page if they are attempting to purchase items or leave a review without being logged in for ease of access. The login and signup pages are connected for the user quickly sign up or sign in. 
+InstaNoodles features a fully functional user authentication system, complete with a demo user login and error handling for incomplete entries. The user is automatically redirected to the login page if they are attempting to purchase items or leave a review without being logged in for ease of access. The login and signup pages are connected for the user easily switch between the sign up or sign in pages. 
 
 <img width="1154" alt="Screen Shot 2022-09-18 at 8 21 50 PM" src="https://user-images.githubusercontent.com/107089418/190944813-3ed65999-c936-4055-8e40-b8b5d52f6db7.png">
 
@@ -26,11 +26,11 @@ Each product has a feature page where users can view its details and reviews. If
 ### Cart 
 ---
 
-When the user adds an item to their cart via the product show page, a shopping cart modal will appear to signify successfully completing the action. The cart items can be updated using an input field to change the quantity. The cart item can also be deleted to remove the item entirely. The shopping cart will calculate the subtotal of each item and the total subtotal of all items in the cart. When the user wishes to check out, they can press the checkout button which will empty the cart and redirect the user to a purchase completed modal. The user exit the modal at any point by clicking outside of the modal. 
+When the user adds an item to their cart via the product show page, a shopping cart modal will appear to signify successful completion. The cart items can be updated using an input field to change the quantity in the modal. The cart items can also be deleted to remove the item entirely. The shopping cart will calculate the subtotal of each item and the total subtotal of all items in the cart. When the user wishes to check out, they can press the checkout button which will empty the cart and redirect the user to a purchase completed modal. The user exit the modal at any point by clicking outside of the modal. 
 
 <img width="1091" alt="Screen Shot 2022-09-18 at 8 33 10 PM" src="https://user-images.githubusercontent.com/107089418/190945599-4d27c6c6-10a3-4509-a4bf-c42df13e86f6.png">
 
-The code snippet below contains logic that handles the incrementation and decrementation of each cart listing. The cart listing's input field contains a placeholder with their current amount. When the user changes the amount and presses the "update amount" button, the new quantity will then be calculated in the cart into the subtotal. 
+The code snippet below contains logic that handles the incrementation and decrementation of each cart listing. The cart listing's input field contains a placeholder with their current amount. When the user changes the amount and presses the "update amount" button, the new quantity be recalculated into the subtotal.
 
 
 ![good-code](https://user-images.githubusercontent.com/107089418/190946979-1a073121-59ed-46af-ace2-9694e250f5bc.png)
