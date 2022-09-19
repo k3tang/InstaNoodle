@@ -7,6 +7,8 @@
 --- 
 Instanoodles is a website clone of a UK-based vegan instant noodle company, [FutureNoodles](https://futurenoodles.com). The company uses a fun and modern aesthetic in their brand marketing, redefining what instant noodles can be. Additionally, FutureNoodles is a socially conscious, environmentally-friendly product that promotes wellness in their consumers by providing a healthier alternative for those who eat in a hurry. 
 
+The website also contains many engaging animations that adds a spark of fun to an otherwise prosaic activity - online grocery shopping. 
+
 ## Features 
 ---
 ### User Authentication - Login/Signup 
