@@ -25,7 +25,7 @@ Each product has a feature page where users can view its details and reviews. If
 <img width="1329" alt="Screen Shot 2022-09-18 at 8 27 03 PM" src="https://user-images.githubusercontent.com/107089418/190945138-0793e235-34b2-4265-8c82-d0dcdaca7ddd.png">
 <img width="1365" alt="Screen Shot 2022-09-18 at 8 27 20 PM" src="https://user-images.githubusercontent.com/107089418/190945158-43bd0571-33a9-438d-93ab-354afcd0fcbf.png">
 
-This code handles the logic for checking if the user is making an new review or editing an exisiting review. If the review exists, the contents of the review will be used to prepopuluate the review form. The useState hook is used here to track the state of the review contents and if the user is creating or updating a review. This information will later be used to determine which backend controller the information will be routed to. 
+This code handles the logic for checking if the user is making an new review or editing an exisiting review. If the review exists, the contents of the review will be used to prepopuluate the review form. The useState hook is used here to track the state of the review contents.
 
 ![review-code](https://user-images.githubusercontent.com/107089418/192113718-479dd983-3c77-4537-8328-078d689b2636.png)
 
