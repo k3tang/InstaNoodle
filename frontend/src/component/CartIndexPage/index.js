@@ -65,7 +65,6 @@ const Cart = () => {
 
   const handleCheckoutModal = () => {
         let ele = document.getElementById("checkout-modal");
-        console.log(ele, "ele")
         ele.style.display = "block";
         let bg = document.getElementById("cart-modal-background");
         bg.style.display = "block";

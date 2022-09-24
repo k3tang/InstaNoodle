@@ -4,7 +4,6 @@ const Checkout = () => {
 
     const closeModal = () => {
         let ele = document.getElementById("checkout-modal");
-        console.log(ele, "ele")
         ele.style.display = "none";
         let bg = document.getElementById("cart-modal-background");
         bg.style.display = "none";

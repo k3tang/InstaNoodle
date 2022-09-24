@@ -22,6 +22,6 @@
 .footer-outer-wrapper {
     display: block;
     width: 100vw;
-    right: 0;
     bottom: 0;
+    padding-top: 3vh;
 }

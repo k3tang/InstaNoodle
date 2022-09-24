@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 
 const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
-    console.log("selectedReview", selectedReview)
     const {productId} = useParams();
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
@@ -56,7 +55,7 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
                 title: title
             }
         }
-        console.log("errors1", errors)
+
 
         if (tempErrors.length > 0) {
             return;
@@ -67,9 +66,6 @@ const ReviewFormModal = ({selectedReview, setSelectedReview}) => {
         } else {
             dispatch(createReview(newReview))
         }
-
-        console.log("errors2", errors)
-
         closeReview();
         setBody("");
         setErrors([]);
