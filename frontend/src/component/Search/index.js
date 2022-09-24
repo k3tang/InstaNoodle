@@ -18,6 +18,7 @@ const SearchBar = () => {
             dispatch(searchProducts(query));
             history.push("/search");
             setShowSearch(false);
+            setQuery("");
         }
 
         const handleSearchBar = (e) => {

@@ -10,10 +10,10 @@ const Footer = () => {
         <><div className="footer-outer-wrapper">
             <div className="footer-container">
                 <div className="footer-logo-container">
-                    <a href="https://github.com/k3tang"><img src={gitHub} alt="github"/></a>
-                    <a href="https://www.linkedin.com/in/karentsiu/"><img src={linkedIn} alt="linkedIn" id="linkedIn"/></a>
+                    <a href="https://github.com/k3tang" target="_blank" rel="noopener noreferrer"><img src={gitHub} alt="github"/></a>
+                    <a href="https://www.linkedin.com/in/karentsiu/" target="_blank" rel="noopener noreferrer"><img src={linkedIn} alt="linkedIn" id="linkedIn"/></a>
                 </div>
-                <a href="https://www.futurenoodles.com" ><img src={footerLogo} alt="noodle-icon" className="footer-logo"/></a>
+                <a href="https://www.futurenoodles.com" target="_blank" rel="noopener noreferrer"><img src={footerLogo} alt="noodle-icon" className="footer-logo"/></a>
             </div>
         </div>
         </>
