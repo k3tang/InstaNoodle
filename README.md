@@ -9,6 +9,16 @@ Instanoodles is a website clone of a UK-based vegan instant noodle company, [Fut
 
 The website also contains many engaging animations that adds a spark of fun to an otherwise prosaic activity - online grocery shopping. 
 
+## Technologies Utilized 
+___ 
+
+* AWS S3
+* Heroku
+* HTML5 and CSS
+* Javascript/AJAX/JBuilder
+* React/Redux
+* Ruby on Rails 
+
 ## Features 
 ---
 ### User Authentication - Login/Signup 
@@ -50,13 +60,4 @@ A search bar feature is revealed by clicking on the spyglass in the navigation b
 <img width="1391" alt="Screen Shot 2022-09-18 at 8 55 25 PM" src="https://user-images.githubusercontent.com/107089418/190947386-4fdaccb5-3ba6-4b5e-aeef-10d274403c78.png">
 
 
-## Technologies Utilized 
-___ 
-
-* AWS S3
-* Heroku
-* HTML5 and CSS
-* Javascript/AJAX/JBuilder
-* React/Redux
-* Ruby on Rails 
 
