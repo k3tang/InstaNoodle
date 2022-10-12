@@ -57,6 +57,7 @@
     top: 4vh;
     right: 2.5vw;
     margin-left: 40vw;
+    cursor: pointer;
 }
 #star-buttons {
     font-size: 3vw;
@@ -96,4 +97,5 @@
     font-size: 1.5vw;
     border: 1px solid black;
     padding: 1vh;
+    cursor: pointer;
 }

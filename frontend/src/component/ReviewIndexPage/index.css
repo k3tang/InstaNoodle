@@ -100,4 +100,5 @@
 #review-trash, #review-pencil {
    padding-left: 0.5vw;
    padding-right: 0.5vw;
+   cursor: pointer;
 }

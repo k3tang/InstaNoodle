@@ -157,6 +157,7 @@
     height: 20vw;
     font-size: 2vw;
     background-color: #feb8af;
+    min-height: 300px;
 }
 
 #close-checkout-modal {
