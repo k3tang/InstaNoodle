@@ -41,8 +41,9 @@ function Navigation() {
     const dispatch = useDispatch();
     const location = useLocation();
 
+
     useEffect(() => {
-        dispatch(fetchCartItems());
+        if (sessionUser) dispatch(fetchCartItems());
         dispatch(fetchProducts());
     }, [cartItems.length])
 

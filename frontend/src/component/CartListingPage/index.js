@@ -20,7 +20,7 @@ const CartListing = ({cartItem, setSubamount}) => {
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
-        dispatch(fetchCartItems())
+        if (user) dispatch(fetchCartItems());
     },[deleted])
 
     if (!user) return history.push("/signup");

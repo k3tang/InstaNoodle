@@ -20,12 +20,12 @@ const ProductShow = () => {
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
-        dispatch(fetchCartItems())
+        // dispatch(fetchCartItems())
         dispatch(fetchReviews(productId))
     }, [productId])
 
     useEffect(() => {
-        dispatch(getCartItem(productId))
+        if (user) dispatch(getCartItem(productId));
     },[item])
 
     if (!product) return null;

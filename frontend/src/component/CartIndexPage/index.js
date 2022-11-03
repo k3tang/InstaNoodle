@@ -19,14 +19,14 @@ const Cart = () => {
     const [subamount, setSubamount] = useState(0)
 
     useEffect(() => {
-        dispatch(fetchCartItems())
+        if (user) dispatch(fetchCartItems());
         dispatch(fetchProducts()) 
     }, [cartItems.length])
 
-    useEffect(() => {
-        dispatch(fetchCartItems())
-        dispatch(fetchProducts()) 
-    },[user])
+    // useEffect(() => {
+    //     dispatch(fetchCartItems())
+    //     dispatch(fetchProducts()) 
+    // },[user])
 
     const mapCartItems = () => { 
         if (cartItems.length === 0) {
