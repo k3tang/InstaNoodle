@@ -16,7 +16,7 @@ const CartListing = ({cartItem, setSubamount}) => {
     const [deleted, setDeleted] = useState(false);
     const history = useHistory();
    
-   
+
 
     useEffect(() => {
         dispatch(fetchProduct(productId))

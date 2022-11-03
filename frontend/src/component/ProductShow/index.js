@@ -46,9 +46,11 @@ const ProductShow = () => {
     const handleAddCart = (e) => {
         e.preventDefault();
         openSidebar();
+
+        if (!user) return; 
         const userId = user.id;
 
-       
+      
         if (!item ) {
             const newItem = {
                 cartItem: {
