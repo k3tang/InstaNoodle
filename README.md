@@ -9,6 +9,16 @@ Instanoodles is a website clone of a UK-based vegan instant noodle company, [Fut
 
 The website also contains many engaging animations that adds a spark of fun to an otherwise prosaic activity - online grocery shopping. 
 
+## Technologies Utilized 
+___ 
+
+* AWS S3
+* Heroku
+* HTML5 and CSS
+* Javascript/AJAX/JBuilder
+* React/Redux
+* Ruby on Rails 
+
 ## Features 
 ---
 ### User Authentication - Login/Signup 
@@ -24,6 +34,11 @@ Each product has a feature page where users can view its details and reviews. If
 
 <img width="1329" alt="Screen Shot 2022-09-18 at 8 27 03 PM" src="https://user-images.githubusercontent.com/107089418/190945138-0793e235-34b2-4265-8c82-d0dcdaca7ddd.png">
 <img width="1365" alt="Screen Shot 2022-09-18 at 8 27 20 PM" src="https://user-images.githubusercontent.com/107089418/190945158-43bd0571-33a9-438d-93ab-354afcd0fcbf.png">
+
+This code handles the logic for checking if the user is making an new review or editing an exisiting review. If the review exists, the contents of the review will be used to prepopuluate the review form. The useState hook is used here to track the state of the review contents.
+
+![review-code](https://user-images.githubusercontent.com/107089418/192113718-479dd983-3c77-4537-8328-078d689b2636.png)
+
 
 ### Cart 
 ---
@@ -45,13 +60,4 @@ A search bar feature is revealed by clicking on the spyglass in the navigation b
 <img width="1391" alt="Screen Shot 2022-09-18 at 8 55 25 PM" src="https://user-images.githubusercontent.com/107089418/190947386-4fdaccb5-3ba6-4b5e-aeef-10d274403c78.png">
 
 
-## Technologies Utilized 
-___ 
-
-* AWS S3
-* Heroku
-* HTML5 and CSS
-* Javascript/AJAX/JBuilder
-* React/Redux
-* Ruby on Rails 
 
