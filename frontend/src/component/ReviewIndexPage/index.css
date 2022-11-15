@@ -82,6 +82,7 @@
     width: 25vw;
     text-align: center;
     padding: 1vw;
+    cursor: pointer;
 }
 
 .review-index-header {

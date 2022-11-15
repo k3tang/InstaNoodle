@@ -27,6 +27,7 @@ const ReviewIndexPage = () => {
     const reviews = useSelector(getReviews);
     const dispatch = useDispatch();
     const [selectedReview, setSelectedReview] = useState(null);
+    const [userReview, setUserReview] = useState(false);
     const user = useSelector(state => state.session.user)
     useEffect(() => {
         dispatch(fetchReviews(productId))
@@ -48,6 +49,13 @@ const ReviewIndexPage = () => {
             openReview()
         }
 
+        const searchUserReview = (reviews) => {
+            for (let review of reviews) {
+                if (review.userId === user.id) return true;
+            }
+            return false;
+        }
+    
     return (
         <>
             <div className="review-index-container">
@@ -56,14 +64,16 @@ const ReviewIndexPage = () => {
                     <h2 className="review-index-average"></h2>
                 </div>
                 <div className="review-button-container">
+                   
                     {user ? <div onClick={writeReview} className="review-button">Write a Review</div> : ""}
                     <div id="review-bg-modal" onClick={closeReview}></div>
+                    
                 </div>
                 <div className="reviews-mapped">
                     {mapReviews()}
                 </div>
                 <div id="review-modal-container">
-                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
+                    <ReviewFormModal selectedReview={selectedReview} setSelectedReview={setSelectedReview} />
                 </div>
             </div>
         </>

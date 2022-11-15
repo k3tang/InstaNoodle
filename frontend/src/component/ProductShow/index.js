@@ -18,6 +18,7 @@ const ProductShow = () => {
     const [count, setCount] = useState(1);
     const history = useHistory();
 
+    window.scrollTo(0,0);
     useEffect(() => {
         dispatch(fetchProduct(productId))
         // dispatch(fetchCartItems())
