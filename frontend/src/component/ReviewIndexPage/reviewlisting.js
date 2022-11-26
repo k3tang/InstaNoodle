@@ -24,6 +24,7 @@ const ReviewListing = ({review, setSelectedReview, openReview}) => {
         })
     }
 
+
     function handleDelete() {
         return dispatch(deleteReview(id));
     }
