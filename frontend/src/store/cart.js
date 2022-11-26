@@ -87,7 +87,7 @@ export const deleteCartItem = (cartItemId, productId) => async dispatch => {
     dispatch(removeItem(productId))
 }
 
-// reducer - populates the view 
+// reducer - populates the view
 
 function cartReducer(state = {}, action) {
     Object.freeze(state);
