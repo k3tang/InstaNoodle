@@ -19,8 +19,8 @@ const CartListing = ({cartItem, setSubamount}) => {
 
 
     useEffect(() => {
-        dispatch(fetchProduct(productId))
         if (user) dispatch(fetchCartItems());
+        dispatch(fetchProduct(productId))
     },[deleted])
 
     if (!user) return history.push("/signup");
