@@ -47,10 +47,11 @@ When the user adds an item to their cart via the product show page, a shopping c
 
 <img width="1091" alt="Screen Shot 2022-09-18 at 8 33 10 PM" src="https://user-images.githubusercontent.com/107089418/190945599-4d27c6c6-10a3-4509-a4bf-c42df13e86f6.png">
 
-The code snippet below contains logic that handles the incrementation and decrementation of each cart listing. The cart listing's input field contains a placeholder with their current amount. When the user changes the amount and presses the "update amount" button, the new quantity be recalculated into the subtotal.
+The code snippet below contains logic that handles changing the quantity of each cart listing. The cart listing's input field contains a placeholder with their current amount. When the user changes the amount and presses the "update amount" button, the new quantity be recalculated into the subtotal.
+
+![cartlistingcode](https://user-images.githubusercontent.com/107089418/204943569-87f382a3-a9c5-4e1c-87dd-5b8b07db3633.png)
 
 
-![good-code](https://user-images.githubusercontent.com/107089418/190946979-1a073121-59ed-46af-ace2-9694e250f5bc.png)
 
 ### Search Bar 
 ---
