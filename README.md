@@ -50,7 +50,8 @@ When the user adds an item to their cart via the product show page, a shopping c
 The code snippet below contains logic that handles the incrementation and decrementation of each cart listing. The cart listing's input field contains a placeholder with their current amount. When the user changes the amount and presses the "update amount" button, the new quantity be recalculated into the subtotal.
 
 
-![good-code](https://user-images.githubusercontent.com/107089418/190946979-1a073121-59ed-46af-ace2-9694e250f5bc.png)
+![cartcode](https://user-images.githubusercontent.com/107089418/204940615-4c2b2a5c-b17c-46f6-a811-9becfe5c83aa.png)
+
 
 ### Search Bar 
 ---
